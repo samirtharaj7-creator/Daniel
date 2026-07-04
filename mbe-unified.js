@@ -11,6 +11,7 @@
 
   function ensureShell() {
     if (!document.body) return;
+    document.body.classList.add('mbe-shell-managed');
     document.querySelectorAll('.mbe-global-shell').forEach((node, index) => {
       if (index > 0 || node.getAttribute('data-tool') !== tool || !node.hasAttribute('data-embedded')) node.remove();
     });
