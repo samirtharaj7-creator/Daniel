@@ -17,11 +17,17 @@
     if (!document.querySelector('.mbe-global-shell[data-tool="' + tool + '"][data-embedded="true"]')) {
       document.body.insertAdjacentHTML('afterbegin', headerMarkup);
     }
-    document.querySelectorAll('.mbe-global-footer').forEach((node, index) => {
-      if (index > 0 || node.getAttribute('data-tool') !== tool) node.remove();
+    const existingFooters = Array.from(document.querySelectorAll('.mbe-global-footer'));
+    let footer = existingFooters.find((node) => node.getAttribute('data-tool') === tool) || null;
+    existingFooters.forEach((node) => {
+      if (node !== footer) node.remove();
     });
-    if (!document.querySelector('.mbe-global-footer[data-tool="' + tool + '"]')) {
+    if (!footer) {
       document.body.insertAdjacentHTML('beforeend', footerMarkup);
+      footer = document.querySelector('.mbe-global-footer[data-tool="' + tool + '"]');
+    }
+    if (footer && footer.parentElement === document.body && footer !== document.body.lastElementChild) {
+      document.body.appendChild(footer);
     }
     updateYear();
   }

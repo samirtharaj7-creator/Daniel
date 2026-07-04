@@ -196,11 +196,11 @@
 .mbe-library-desc{color:var(--mbe-muted);font-size:.78rem;font-weight:500;line-height:1.35;}
 
 .mbe-global-footer{
-  background:linear-gradient(180deg,#fffdf8 0%,var(--mbe-ivory) 100%);
-  color:var(--mbe-muted);
+  background:hsl(var(--background,45 29% 97%));
+  color:hsl(var(--muted-foreground,33 5% 39%));
   font-family:var(--mbe-font-ui);
-  border-top:1px solid var(--mbe-rule);
-  box-shadow:0 -14px 32px -30px rgba(11,31,58,.42);
+  border-top:1px solid hsl(var(--border,39 25% 86%));
+  box-shadow:none;
 }
 
 .mbe-global-footer .mbe-shell-wrap{
@@ -235,20 +235,20 @@
 
 .mbe-footer-wrap > span:last-child{
   flex-basis:100%;
-  color:var(--mbe-muted);
+  color:inherit;
 }
 
 .mbe-footer-link{
-  color:var(--mbe-gold-dark);
+  color:hsl(var(--primary,83 28% 29%));
   text-decoration:none;
   font-weight:700;
-  border-bottom:1px solid rgba(155,118,40,.45);
+  border-bottom:1px solid currentColor;
   padding-bottom:2px;
 }
 
 .mbe-footer-link:hover{
-  color:var(--mbe-navy);
-  border-bottom-color:var(--mbe-navy);
+  color:hsl(var(--foreground,0 0% 10%));
+  border-bottom-color:currentColor;
 }
 
 @media(max-width:720px){
