@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap');
+
+/* ============================================================================
+   Daniel — "Illustrated Atlas" → Direction C, applied site-wide.
+   A single cinematic navy + gold + serif theme for every page.
+
+   The site is a Next.js/Tailwind build using shadcn HSL-channel tokens
+   (hsl(var(--token))). Redefining those 15 tokens re-skins the whole app.
+   ========================================================================== */
+
+:root,
+.dark {
+  --background: 213 58% 13%;
+  --foreground: 41 44% 89%;
+  --card: 213 42% 16%;
+  --card-foreground: 41 42% 88%;
+  --popover: 213 44% 15%;
+  --popover-foreground: 41 42% 88%;
+  --primary: 42 54% 54%;
+  --primary-foreground: 213 60% 10%;
+  --secondary: 213 38% 19%;
+  --secondary-foreground: 41 40% 88%;
+  --muted: 213 34% 18%;
+  --muted-foreground: 41 20% 68%;
+  --accent: 213 40% 22%;
+  --accent-foreground: 42 54% 62%;
+  --border: 213 26% 27%;
+  --input: 213 26% 27%;
+  --ring: 42 54% 54%;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "EB Garamond", Georgia, serif;
+}
+
+body {
+  background:
+    radial-gradient(1200px 520px at 50% -12%, rgba(201, 164, 76, .10), transparent 60%),
+    linear-gradient(180deg, #0d1c33 0%, #0b1f3a 55%, #081521 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Compact the Daniel app header so the section navigation does not dominate. */
+body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] {
+  top: 46px !important;
+}
+
+body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] > div:first-child {
+  height: 4rem !important;
+  min-height: 4rem !important;
+}
+
+body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] nav[aria-label="Main navigation"] {
+  gap: clamp(1.75rem, 3vw, 2.5rem) !important;
+}
+
+body.mbe-shell-managed > div.fixed[class*="top-16"][class*="z-40"] {
+  top: calc(46px + 4rem) !important;
+}
+
+body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] button[aria-label="Toggle color theme"] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] > div:first-child {
+    height: 3.75rem !important;
+    min-height: 3.75rem !important;
+  }
+
+  body.mbe-shell-managed > div.fixed[class*="top-16"][class*="z-40"] {
+    top: calc(46px + 3.75rem) !important;
+  }
+}
+
+/* Type system: Cinzel display caps · EB Garamond text · Jost UI. */
+h1, h2 {
+  font-family: "Cinzel", Georgia, serif !important;
+  letter-spacing: .015em;
+  line-height: 1.12;
+}
+h3, h4 {
+  font-family: "EB Garamond", Georgia, serif !important;
+}
+
+/* Home hero title: keep the display treatment without letting it dominate. */
+main > section:first-child h1[class*="clamp(5.25rem,13vw,13.5rem)"] {
+  font-size: clamp(3rem, 6.2vw, 7rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .01em !important;
+}
+
+/* Home hero artwork: engraved Daniel scene, faded behind the content. */
+main > section:first-child > div:first-child {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+main > section:first-child > div:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(11, 31, 58, .72) 0%, rgba(11, 31, 58, .28) 36%, rgba(11, 31, 58, .08) 100%),
+    linear-gradient(180deg, rgba(11, 31, 58, .03) 0%, rgba(11, 31, 58, .32) 57%, rgba(11, 31, 58, .9) 100%),
+    url("/assets/daniel-hero-engraving.png?v=1");
+  background-position: center top;
+  background-size: cover;
+  opacity: .86;
+}
+
+main > section:first-child > div:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 76%, rgba(11, 31, 58, .76) 0%, rgba(11, 31, 58, .34) 24%, transparent 52%),
+    radial-gradient(circle at 86% 52%, rgba(201, 164, 76, .11) 0%, transparent 36%);
+}
+
+main > section:first-child > div:first-child > * {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-daniel-route="home"] main > section:first-child > div:first-child {
+  min-height: clamp(29rem, 65svh, 37rem) !important;
+  padding-top: clamp(2.75rem, 5vh, 3.75rem) !important;
+  padding-bottom: clamp(2rem, 4vh, 2.75rem) !important;
+}
+
+body[data-daniel-route="home"] main > section:first-child > div:first-child h1,
+body[data-daniel-route="home"] main > section:first-child > div:first-child p[class*="text-foreground"] {
+  color: #f4ead2 !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .5);
+}
+
+body[data-daniel-route="home"] main > section:first-child > div:first-child p[class*="text-muted-foreground"] {
+  color: rgba(236, 224, 196, .82) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .45);
+}
+
+body[data-daniel-route="home"] main > section:first-child > div:first-child .bg-border {
+  background-color: rgba(236, 224, 196, .42) !important;
+}
+
+/* Introduction hero artwork: full-width, but held behind the page summary. */
+body[data-daniel-route="introduction"] main > div > section:first-child {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: clamp(34rem, 64vh, 46rem);
+  background: #0b1f3a !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child::before,
+body[data-daniel-route="introduction"] main > div > section:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child::before {
+  background-image:
+    linear-gradient(90deg, rgba(11, 31, 58, .92) 0%, rgba(11, 31, 58, .64) 42%, rgba(11, 31, 58, .16) 100%),
+    linear-gradient(180deg, rgba(11, 31, 58, .18) 0%, rgba(11, 31, 58, .30) 58%, rgba(11, 31, 58, .90) 100%),
+    url("/assets/daniel-introduction-engraving.jpg?v=1");
+  background-position: center right;
+  background-size: cover;
+  opacity: .9;
+  transform: scale(1.01);
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child::after {
+  background:
+    radial-gradient(circle at 18% 48%, rgba(201, 164, 76, .12) 0%, transparent 34%),
+    linear-gradient(180deg, transparent 0%, rgba(8, 21, 33, .78) 100%);
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child h1,
+body[data-daniel-route="introduction"] main > div > section:first-child h2,
+body[data-daniel-route="introduction"] main > div > section:first-child h3,
+body[data-daniel-route="introduction"] main > div > section:first-child .text-foreground,
+body[data-daniel-route="introduction"] main > div > section:first-child [class*="text-foreground"] {
+  color: #f4ead2 !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .5);
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child p,
+body[data-daniel-route="introduction"] main > div > section:first-child .text-muted-foreground,
+body[data-daniel-route="introduction"] main > div > section:first-child [class*="text-muted-foreground"] {
+  color: rgba(236, 224, 196, .82) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .45);
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child .text-primary,
+body[data-daniel-route="introduction"] main > div > section:first-child [class*="text-primary"] {
+  color: #d8b866 !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child .rounded-md.bg-card {
+  background: rgba(12, 32, 57, .84) !important;
+  border-color: rgba(201, 164, 76, .22) !important;
+  box-shadow: 0 20px 60px -42px rgba(0, 0, 0, .9);
+  backdrop-filter: blur(3px);
+}
+
+@media (max-width: 760px) {
+  body[data-daniel-route="introduction"] main > div > section:first-child {
+    min-height: auto;
+  }
+
+  body[data-daniel-route="introduction"] main > div > section:first-child::before {
+    background-position: 62% center;
+    opacity: .66;
+  }
+
+  body[data-daniel-route="home"] main > section:first-child > div:first-child {
+    min-height: clamp(27rem, 60svh, 32rem) !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+}
+
+/* Wordmark → Cinzel (the unique tracking-[0.3em] span in the header). */
+.tracking-\[0\.3em\] {
+  font-family: "Cinzel", Georgia, serif !important;
+  font-weight: 600 !important;
+  letter-spacing: .12em !important;
+  font-size: .98rem !important;
+}
+
+/* Let Daniel 11's timeline spine continue through the gaps between cards
+   without changing the chart's original colors. */
+body[data-daniel-chart="daniel-11"] div.relative.grid.min-w-0.gap-6.overflow-x-hidden,
+body[data-daniel-chart="daniel-11"] div.group.relative.isolate.grid.cursor-pointer.gap-4.overflow-hidden.rounded-lg.border {
+  overflow: visible !important;
+}
+
+/* Avoid a white flash from the shell's loading skeleton. */
+body > #root:empty::before {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.05), rgba(255,255,255,.12), rgba(255,255,255,.05)) 0 0 / 220% 100%,
+    linear-gradient(180deg, #0e2138 0%, #0b1f3a 100%) !important;
+  border-color: rgba(201,164,76,.18) !important;
+}
+
+/* ---- Shared MBE shell (header / footer) --------------------------------
+   Dark by default, matching the Daniel app theme. */
+:root,
+.dark {
+  --mbe-ink: #ece0c4;
+  --mbe-bg: #0b1f3a;
+  --mbe-soft: #16304c;
+  --mbe-muted: #b9ad90;
+  --mbe-ivory: #0e2138;
+  --mbe-rule: rgba(201,164,76,.18);
+  --mbe-navy: #ece0c4;
+  --mbe-gold-dark: #d8b866;
+}
+
+.mbe-global-shell,
+.mbe-global-footer {
+  background: linear-gradient(180deg, #0e2138 0%, #0b1f3a 100%) !important;
+  border-color: var(--mbe-rule) !important;
+  color: var(--mbe-muted);
+}
+
+.mbe-ribbon-brand { color: var(--mbe-navy); }
+.mbe-ribbon-back::before { background: rgba(201,164,76,.30); }
+
+/* My Bible Explorer logo art is dark-on-transparent; render it light on navy. */
+.mbe-ribbon-logo,
+.mbe-footer-logo {
+  filter: grayscale(1) brightness(0) invert(88%) sepia(18%) saturate(320%) hue-rotate(2deg);
+}
+
+.mbe-library-panel {
+  background: #12263f !important;
+  color: #ece0c4 !important;
+  border-color: rgba(201,164,76,.22) !important;
+  box-shadow: 0 26px 60px -30px rgba(0,0,0,.7) !important;
+}
+.mbe-library-item { color: #ece0c4 !important; }
+.mbe-library-item:hover { background: #17304c !important; }
+.mbe-library-item[aria-current="page"] { background: rgba(201,164,76,.16) !important; }
+.mbe-library-name { color: #f3e8cc !important; }
+.mbe-library-desc { color: #b1a488 !important; }
+
+.mbe-footer-link { color: #e0c37e !important; border-bottom-color: rgba(201,164,76,.45) !important; }
+.mbe-footer-link:hover { color: #fff2d4 !important; border-bottom-color: #e0c37e !important; }
+
+/* Text selection tint. */
+::selection { background: rgba(201,164,76,.35); color: #fff6e4; }
