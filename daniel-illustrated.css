@@ -60,6 +60,19 @@ body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="bo
   display: none !important;
 }
 
+body[data-daniel-chapter] main[data-bible-panel] article > div:first-child > .mt-4.flex.flex-wrap.gap-2 {
+  display: none !important;
+}
+
+body[data-daniel-chapter] main[data-bible-panel] article > div:first-child {
+  border-bottom-width: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body[data-daniel-chapter] main[data-bible-panel] article > div:first-child + div > div:first-child > .passage-outline-divider {
+  border-top-width: 0 !important;
+}
+
 @media (max-width: 760px) {
   body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] > div:first-child {
     height: 3.75rem !important;
@@ -79,6 +92,26 @@ h1, h2 {
 }
 h3, h4 {
   font-family: "EB Garamond", Georgia, serif !important;
+}
+
+/* Accent text was too close to the dark card color; keep accent backgrounds
+   navy, but render accent labels and small section titles in gold. */
+body.mbe-shell-managed .text-accent,
+body.mbe-shell-managed [class*="text-accent/"] {
+  color: hsl(var(--accent-foreground)) !important;
+}
+
+body[data-daniel-route="charts"] h1,
+body[data-daniel-route="charts"] h2,
+body[data-daniel-route="charts"] h3,
+body[data-daniel-route="charts"] h4,
+body.mbe-shell-managed main h1,
+body.mbe-shell-managed main h2,
+body.mbe-shell-managed main h3,
+body.mbe-shell-managed main h4 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 /* Home hero title: keep the display treatment without letting it dominate. */
