@@ -25,7 +25,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=dvx-26';
+    const href = '/daniel-illustrated.css?v=dvx-27';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -76,6 +76,128 @@
     document.body.setAttribute('data-daniel-chapter', String(chapter));
   }
 
+  const MOBILE_INLINE_NOTES_QUERY = '(max-width: 1023px)';
+  let inlineNoteRequestId = 0;
+
+  function isInlineNotesViewport() {
+    return window.matchMedia && window.matchMedia(MOBILE_INLINE_NOTES_QUERY).matches;
+  }
+
+  function removeInlineStudyNotes() {
+    document.querySelectorAll('[data-daniel-inline-note]').forEach((node) => node.remove());
+  }
+
+  function closeMobileStudyDrawer() {
+    if (!isInlineNotesViewport()) return;
+
+    const panel = document.querySelector('aside[data-commentary-panel]');
+    if (panel) {
+      const closeButton = panel.querySelector('button[aria-label="Close study notes"]');
+      if (closeButton && !panel.classList.contains('translate-x-full')) {
+        closeButton.click();
+      }
+      panel.classList.add('translate-x-full');
+      panel.classList.remove('translate-x-0');
+    }
+
+    document.querySelectorAll('.fixed.inset-0.z-40').forEach((overlay) => {
+      const className = String(overlay.className || '');
+      if (!className.includes('bg-black/45')) return;
+      overlay.classList.add('pointer-events-none', 'opacity-0');
+      overlay.classList.remove('pointer-events-auto', 'opacity-100');
+    });
+  }
+
+  function cleanInlineNoteIds(note, verseNumber) {
+    note.id = 'inline-note-' + verseNumber;
+    note.querySelectorAll('[id]').forEach((node, index) => {
+      node.id = 'inline-note-' + verseNumber + '-' + index;
+    });
+  }
+
+  function cloneStudyNoteUnderVerse(verseButton, verseNumber) {
+    if (!isInlineNotesViewport()) {
+      removeInlineStudyNotes();
+      return true;
+    }
+
+    const sourceNote = document.getElementById('note-' + verseNumber);
+    if (!sourceNote) return false;
+
+    const verseBlock = verseButton.closest('div');
+    if (!verseBlock) return false;
+
+    removeInlineStudyNotes();
+
+    const note = sourceNote.cloneNode(true);
+    cleanInlineNoteIds(note, verseNumber);
+    note.classList.add('daniel-inline-note');
+    note.setAttribute('data-daniel-inline-note', '');
+    note.setAttribute('data-daniel-inline-note-verse', String(verseNumber));
+    note.setAttribute('role', 'region');
+    note.setAttribute('aria-label', 'Study note for verse ' + verseNumber);
+    note.removeAttribute('aria-live');
+
+    verseBlock.insertAdjacentElement('afterend', note);
+    closeMobileStudyDrawer();
+    window.setTimeout(closeMobileStudyDrawer, 80);
+    return true;
+  }
+
+  function queueInlineStudyNote(verseButton) {
+    const match = verseButton && verseButton.id && verseButton.id.match(/^v-(\d+)$/);
+    if (!match) return;
+
+    const verseNumber = Number(match[1]);
+    const requestId = ++inlineNoteRequestId;
+
+    if (!isInlineNotesViewport()) {
+      removeInlineStudyNotes();
+      return;
+    }
+
+    removeInlineStudyNotes();
+
+    [0, 80, 180, 360, 700, 1100].forEach((delay) => {
+      window.setTimeout(() => {
+        if (requestId !== inlineNoteRequestId) return;
+        if (cloneStudyNoteUnderVerse(verseButton, verseNumber)) inlineNoteRequestId += 1;
+      }, delay);
+    });
+  }
+
+  function installInlineStudyNotes() {
+    if (window.__danielInlineStudyNotes) return;
+    window.__danielInlineStudyNotes = true;
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!target || typeof target.closest !== 'function') return;
+
+      if (target.closest('button[aria-label="Open study notes"]')) {
+        removeInlineStudyNotes();
+        return;
+      }
+
+      const verseButton = target.closest('main[data-bible-panel] button[id^="v-"]');
+      if (!verseButton) return;
+
+      queueInlineStudyNote(verseButton);
+    }, true);
+
+    if (window.matchMedia) {
+      const media = window.matchMedia(MOBILE_INLINE_NOTES_QUERY);
+      const handleViewportChange = () => {
+        if (!media.matches) removeInlineStudyNotes();
+      };
+      if (typeof media.addEventListener === 'function') {
+        media.addEventListener('change', handleViewportChange);
+      } else if (typeof media.addListener === 'function') {
+        media.addListener(handleViewportChange);
+      }
+    }
+  }
+
   // Swap the header brand emblem for the "Open Scripture" engraving.
   const SCRIPTURE_EMBLEM =
     '<g>' +
@@ -109,6 +231,8 @@
     ensureIllustratedAssets();
     ensureDanielArtworkMeta();
     ensureLogo();
+    installInlineStudyNotes();
+    if (!document.body.hasAttribute('data-daniel-chapter') || !isInlineNotesViewport()) removeInlineStudyNotes();
     document.body.classList.add('mbe-shell-managed');
     document.querySelectorAll('.mbe-global-shell').forEach((node, index) => {
       if (index > 0 || node.getAttribute('data-tool') !== tool || !node.hasAttribute('data-embedded')) node.remove();

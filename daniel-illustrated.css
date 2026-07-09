@@ -73,6 +73,50 @@ body[data-daniel-chapter] main[data-bible-panel] article > div:first-child + div
   border-top-width: 0 !important;
 }
 
+.daniel-inline-note {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] {
+    display: block !important;
+    margin: .85rem 0 1.15rem !important;
+    padding: 1rem !important;
+    border: 1px solid hsl(var(--primary) / .45) !important;
+    border-radius: .5rem !important;
+    background:
+      linear-gradient(180deg, hsl(var(--card) / .98), hsl(var(--background) / .96)) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .04),
+      0 18px 36px -28px rgba(0, 0, 0, .85) !important;
+    font-family: var(--font-sans) !important;
+  }
+
+  body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] > div:first-child {
+    margin-bottom: .75rem !important;
+    padding-bottom: .6rem !important;
+    border-bottom: 1px solid hsl(var(--primary) / .22) !important;
+  }
+
+  body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] span:first-child {
+    color: hsl(var(--accent-foreground)) !important;
+    font-family: var(--font-sans) !important;
+    font-size: .76rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .12em !important;
+    text-transform: uppercase !important;
+  }
+
+  body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] [class*="text-lg"] {
+    font-size: 1rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] p {
+    color: hsl(var(--foreground) / .9) !important;
+  }
+}
+
 @media (max-width: 760px) {
   body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] > div:first-child {
     height: 3.75rem !important;
