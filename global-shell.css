@@ -12,9 +12,9 @@
   --mbe-max:1080px;
   --mbe-accent:var(--mbe-gold);
   --mbe-accent-dark:var(--mbe-gold-dark);
-  --mbe-font-display:"Cormorant Garamond",Georgia,serif;
-  --mbe-font-reading:"Literata",Georgia,serif;
-  --mbe-font-ui:"Inter",system-ui,sans-serif;
+  --mbe-font-display:"Cinzel",Georgia,serif;
+  --mbe-font-reading:"EB Garamond",Georgia,serif;
+  --mbe-font-ui:"Jost",system-ui,sans-serif;
 }
 
 .mbe-global-shell *,
