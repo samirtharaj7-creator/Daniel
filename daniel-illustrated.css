@@ -158,11 +158,44 @@ body.mbe-shell-managed main h4 {
   text-wrap: balance;
 }
 
-/* Home hero title: keep the display treatment without letting it dominate. */
+/* Home hero title: small formal title line, huge book name. */
 main > section:first-child h1[class*="clamp(5.25rem,13vw,13.5rem)"] {
-  font-size: clamp(3rem, 6.2vw, 7rem) !important;
-  line-height: 1 !important;
-  letter-spacing: .01em !important;
+  max-width: min(100%, 58rem) !important;
+  font-family: "Cinzel", Georgia, serif !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  line-height: .88 !important;
+  letter-spacing: 0 !important;
+}
+
+main > section:first-child h1[class*="clamp(5.25rem,13vw,13.5rem)"] > span:nth-child(1),
+main > section:first-child h1[class*="clamp(5.25rem,13vw,13.5rem)"] > span:nth-child(2) {
+  display: inline !important;
+  color: hsl(var(--primary)) !important;
+  font-size: clamp(1.15rem, 2.7vw, 2.55rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: clamp(.18em, .72vw, .36em) !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .5);
+}
+
+main > section:first-child h1[class*="clamp(5.25rem,13vw,13.5rem)"] > span:nth-child(2)::before {
+  content: " ";
+}
+
+main > section:first-child h1[class*="clamp(5.25rem,13vw,13.5rem)"] > span:nth-child(3) {
+  display: block !important;
+  margin-top: .18em !important;
+  color: #fff4d8 !important;
+  font-size: clamp(3rem, 11.25vw, 10.25rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: clamp(.01em, .22vw, .045em) !important;
+  line-height: .78 !important;
+  text-transform: uppercase !important;
+  text-shadow:
+    0 3px 22px rgba(0, 0, 0, .55),
+    0 0 1px rgba(255, 244, 216, .5);
 }
 
 /* Home hero artwork: engraved Daniel scene, faded behind the content. */
