@@ -258,6 +258,8 @@
 
 html{
   scroll-padding-top:64px;
+  --mbe-reader-footer-height:0px;
+  --mbe-reader-workspace-top:8rem;
 }
 
 body:has(> .mbe-global-footer){
@@ -278,6 +280,33 @@ body:has(> .mbe-global-footer) > .atlas-page{
 body:has(> .mbe-global-footer) > .mbe-global-footer{
   margin-top:auto;
   flex:0 0 auto;
+}
+
+@media(min-width:981px){
+  body.mbe-shell-managed [data-chapter-workspace]{
+    height:calc(100dvh - var(--mbe-reader-workspace-top, 8rem)) !important;
+    min-height:0 !important;
+  }
+
+  body.mbe-reader-footer-managed > .mbe-global-footer{
+    position:fixed !important;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:70;
+    margin-top:0;
+    transform:translateY(calc(100% + 2px));
+    visibility:hidden;
+    pointer-events:none;
+    transition:transform .24s ease, visibility 0s linear .24s;
+  }
+
+  body.mbe-reader-footer-managed.mbe-reader-footer-visible > .mbe-global-footer{
+    transform:translateY(0);
+    visibility:visible;
+    pointer-events:auto;
+    transition:transform .24s ease, visibility 0s;
+  }
 }
 
 body > #root:empty{
@@ -337,6 +366,7 @@ body > #root:empty::before{
     gap:12px;
     padding:28px 20px;
   }
+
 }
 
 /* Prevent independent commentary panes from extending or overscrolling past the footer. */
@@ -347,7 +377,8 @@ body{
 
 @media(min-width:981px){
   body.mbe-shell-managed > main:has(:is(.split-reader,.reader-shell)),
-  body:has(> .mbe-global-footer) > main:has(:is(.split-reader,.reader-shell)){
+  body:has(> .mbe-global-footer) > main:has(:is(.split-reader,.reader-shell)),
+  body.mbe-shell-managed [data-chapter-workspace]{
     contain:layout paint;
     overflow:clip;
   }
@@ -367,7 +398,50 @@ body{
     .commentary-pane-body,
     .scripture-panel,
     .commentary-panel
+  ),
+  body.mbe-shell-managed [data-chapter-workspace] :is(
+    main[data-bible-panel],
+    aside[data-commentary-panel] .workspace-scroll
   ){
     overscroll-behavior-y:contain;
+  }
+}
+
+
+/* Keep desktop split readers inside the visible viewport below both headers. */
+@media(min-width:981px){
+  body.mbe-shell-managed:has(> .reader-header) > main.reader-page:has(> .split-reader){
+    height:calc(100dvh - 47px - 4.35rem) !important;
+    min-height:calc(100dvh - 47px - 4.35rem) !important;
+    flex:0 0 auto;
+  }
+
+  body.mbe-shell-managed.mbe-reader-footer-visible:has(> .reader-header) > main.reader-page:has(> .split-reader){
+    height:calc(100dvh - 47px - 4.35rem - var(--mbe-reader-footer-height, 0px)) !important;
+    min-height:calc(100dvh - 47px - 4.35rem - var(--mbe-reader-footer-height, 0px)) !important;
+  }
+
+  body.mbe-shell-managed.mbe-reader-footer-visible [data-chapter-workspace]{
+    height:calc(100dvh - var(--mbe-reader-workspace-top, 8rem) - var(--mbe-reader-footer-height, 0px)) !important;
+  }
+
+  body.mbe-shell-managed:has(> .reader-header) > main.reader-page:has(> .split-reader) > .split-reader{
+    height:calc(100dvh - 47px - 4.35rem - var(--chapter-strip-height)) !important;
+    min-height:0 !important;
+  }
+
+  body.mbe-shell-managed.mbe-reader-footer-visible:has(> .reader-header) > main.reader-page:has(> .split-reader) > .split-reader{
+    height:calc(100dvh - 47px - 4.35rem - var(--chapter-strip-height) - var(--mbe-reader-footer-height, 0px)) !important;
+  }
+
+  body.mbe-shell-managed:has(> .reader-header) > main.reader-page:has(> .split-reader) :is(
+    .scripture-pane-body,
+    .commentary-pane-body
+  ),
+  body.mbe-shell-managed [data-chapter-workspace] :is(
+    main[data-bible-panel],
+    aside[data-commentary-panel] .workspace-scroll
+  ){
+    padding-bottom:calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important;
   }
 }

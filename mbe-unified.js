@@ -25,7 +25,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-footer-fit-28';
+    const href = '/daniel-illustrated.css?v=daniel-footer-fit-29';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -196,6 +196,184 @@
         media.addListener(handleViewportChange);
       }
     }
+  }
+
+  const DESKTOP_READER_FOOTER_QUERY = '(min-width: 981px)';
+  let readerFooterState = null;
+
+  function isDesktopReaderFooterViewport() {
+    return window.matchMedia && window.matchMedia(DESKTOP_READER_FOOTER_QUERY).matches;
+  }
+
+  function isChapterSplitReader() {
+    return Boolean(
+      document.body &&
+      document.body.hasAttribute('data-daniel-chapter') &&
+      document.querySelector('[data-chapter-workspace] main[data-bible-panel]') &&
+      document.querySelector('[data-chapter-workspace] aside[data-commentary-panel]')
+    );
+  }
+
+  function readerFooterCandidates() {
+    return Array.from(document.querySelectorAll([
+      '[data-chapter-workspace] .workspace-scroll',
+      'main[data-bible-panel]',
+      'aside[data-commentary-panel]',
+      '.scripture-pane-body',
+      '.commentary-pane-body',
+      '.scripture-pane',
+      '.commentary-pane',
+      '.scripture-panel',
+      '.commentary-panel'
+    ].join(',')));
+  }
+
+  function readerFooterScrollPanes() {
+    const seen = new Set();
+    return readerFooterCandidates().filter((node) => {
+      if (!node || seen.has(node)) return false;
+      seen.add(node);
+      const style = window.getComputedStyle(node);
+      const scrollable = /(auto|scroll)/.test(style.overflowY || '');
+      return scrollable && node.scrollHeight > node.clientHeight + 8;
+    });
+  }
+
+  function setReaderFooterVisible(visible, anchorPane) {
+    if (!document.body) return;
+    document.body.classList.toggle('mbe-reader-footer-visible', visible);
+    document.body.classList.toggle('mbe-reader-footer-hidden', !visible);
+
+    if (!readerFooterState) return;
+    if (!visible) {
+      readerFooterState.anchorPane = null;
+      readerFooterState.anchorBottomTop = 0;
+      return;
+    }
+
+    if (anchorPane) {
+      const bottom = Math.max(0, anchorPane.scrollHeight - anchorPane.clientHeight);
+      anchorPane.scrollTop = bottom;
+      readerFooterState.lastTop.set(anchorPane, bottom);
+      readerFooterState.anchorPane = anchorPane;
+      readerFooterState.anchorBottomTop = bottom;
+    }
+  }
+
+  function measureReaderFooter() {
+    const footer = document.querySelector('.mbe-global-footer[data-tool="' + tool + '"]');
+    if (!footer || !document.documentElement) return;
+    const height = Math.ceil(footer.getBoundingClientRect().height || 0) + 1;
+    const workspace = document.querySelector('[data-chapter-workspace]');
+    const workspaceTop = workspace ? Math.max(0, workspace.getBoundingClientRect().top) : 0;
+    document.documentElement.style.setProperty('--mbe-reader-footer-height', height + 'px');
+    if (workspaceTop) {
+      document.documentElement.style.setProperty('--mbe-reader-workspace-top', workspaceTop.toFixed(2) + 'px');
+    }
+  }
+
+  function resetDesktopReaderFooter() {
+    if (readerFooterState) {
+      readerFooterState.panes.forEach((pane) => pane.removeEventListener('scroll', readerFooterState.onScroll));
+      window.removeEventListener('resize', readerFooterState.onResize);
+      if (readerFooterState.media) {
+        if (typeof readerFooterState.media.removeEventListener === 'function') {
+          readerFooterState.media.removeEventListener('change', readerFooterState.onMediaChange);
+        } else if (typeof readerFooterState.media.removeListener === 'function') {
+          readerFooterState.media.removeListener(readerFooterState.onMediaChange);
+        }
+      }
+      readerFooterState = null;
+    }
+    if (document.body) {
+      document.body.classList.remove('mbe-reader-footer-managed', 'mbe-reader-footer-visible', 'mbe-reader-footer-hidden');
+    }
+    if (document.documentElement) {
+      document.documentElement.style.removeProperty('--mbe-reader-footer-height');
+      document.documentElement.style.removeProperty('--mbe-reader-workspace-top');
+    }
+  }
+
+  function installDesktopReaderFooter() {
+    if (!document.body) return;
+    if (readerFooterState) resetDesktopReaderFooter();
+
+    const footer = document.querySelector('.mbe-global-footer[data-tool="' + tool + '"]');
+    if (!footer || !isChapterSplitReader() || !isDesktopReaderFooterViewport()) {
+      resetDesktopReaderFooter();
+      return;
+    }
+
+    const panes = readerFooterScrollPanes();
+    if (!panes.length) {
+      resetDesktopReaderFooter();
+      return;
+    }
+
+    const media = window.matchMedia ? window.matchMedia(DESKTOP_READER_FOOTER_QUERY) : null;
+    const lastTop = new WeakMap();
+    const atBottom = (pane) => pane.scrollTop + pane.clientHeight >= pane.scrollHeight - 18;
+    const onScroll = (event) => {
+      const pane = event.currentTarget;
+      const previous = lastTop.get(pane) ?? pane.scrollTop;
+      const current = pane.scrollTop;
+      const scrollingUp = current < previous - 2;
+      lastTop.set(pane, current);
+
+      if (scrollingUp) {
+        const anotherPaneAtBottom = panes.some((candidate) => candidate !== pane && atBottom(candidate));
+        if (anotherPaneAtBottom) return;
+
+        if (document.body.classList.contains('mbe-reader-footer-visible') && readerFooterState && readerFooterState.anchorPane === pane) {
+          const footerHeight = Number.parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--mbe-reader-footer-height')) || 0;
+          if (current > readerFooterState.anchorBottomTop - footerHeight) return;
+        }
+
+        setReaderFooterVisible(false);
+        return;
+      }
+
+      if (atBottom(pane)) setReaderFooterVisible(true, pane);
+    };
+    const onResize = () => {
+      measureReaderFooter();
+      if (!isChapterSplitReader() || !isDesktopReaderFooterViewport()) resetDesktopReaderFooter();
+    };
+    const onMediaChange = () => {
+      if (!isDesktopReaderFooterViewport()) resetDesktopReaderFooter();
+    };
+
+    readerFooterState = {
+      panes,
+      media,
+      lastTop,
+      anchorPane: null,
+      anchorBottomTop: 0,
+      onScroll,
+      onResize,
+      onMediaChange
+    };
+    document.body.classList.add('mbe-reader-footer-managed');
+    setReaderFooterVisible(false);
+    measureReaderFooter();
+
+    panes.forEach((pane) => {
+      lastTop.set(pane, pane.scrollTop);
+      pane.addEventListener('scroll', onScroll, { passive: true });
+    });
+    window.addEventListener('resize', onResize, { passive: true });
+    if (media) {
+      if (typeof media.addEventListener === 'function') {
+        media.addEventListener('change', onMediaChange);
+      } else if (typeof media.addListener === 'function') {
+        media.addListener(onMediaChange);
+      }
+    }
+  }
+
+  function queueDesktopReaderFooter() {
+    window.setTimeout(installDesktopReaderFooter, 700);
+    window.setTimeout(installDesktopReaderFooter, 1700);
   }
 
   // Swap the header brand emblem for the "Open Scripture" engraving.
@@ -884,6 +1062,7 @@
     ensureDarkTheme();
     ensureIllustratedAssets();
     ensureDanielArtworkMeta();
+    document.querySelectorAll('.mbe-reader-chapter-nav').forEach((node) => node.remove());
     ensureLogo();
     installInlineStudyNotes();
     if (!document.body.hasAttribute('data-daniel-chapter') || !isInlineNotesViewport()) removeInlineStudyNotes();
@@ -907,6 +1086,7 @@
       document.body.appendChild(footer);
     }
     updateYear();
+    queueDesktopReaderFooter();
   }
 
   function installRouteWatcher() {
