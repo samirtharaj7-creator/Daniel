@@ -121,10 +121,7 @@ const allFiles = [
   "chapters",
   "articles",
   "charts",
-  "timeline",
-  "glossary",
   "schools",
-  "search",
 ].flatMap(collectPublicTextFiles);
 const publicText = allFiles.map((file) => readFileSync(file, "utf8")).join("\n");
 const noteText = notes.map((note) => note.text).join("\n");

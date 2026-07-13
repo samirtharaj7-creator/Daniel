@@ -24,10 +24,7 @@ const includeRoots = [
   "chapters",
   "articles",
   "charts",
-  "timeline",
-  "glossary",
   "schools",
-  "search",
 ];
 
 const textExtensions = new Set([".html", ".txt"]);
