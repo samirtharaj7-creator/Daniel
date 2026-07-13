@@ -17,16 +17,11 @@
     } catch (error) {
       // Some browsers block localStorage in restricted contexts.
     }
-    document.querySelectorAll('button[aria-label="Toggle color theme"]').forEach((button) => {
-      button.setAttribute('hidden', '');
-      button.setAttribute('aria-hidden', 'true');
-      button.style.display = 'none';
-    });
   }
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-initial-dark-35';
+    const href = '/daniel-illustrated.css?v=daniel-clean-45';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -1085,6 +1080,7 @@
     if (footer && footer.parentElement === document.body && footer !== document.body.lastElementChild) {
       document.body.appendChild(footer);
     }
+    document.body.removeAttribute('data-mbe-shell-pending');
     updateYear();
     queueDesktopReaderFooter();
   }
@@ -1124,8 +1120,8 @@
     window.setTimeout(ensureShell, 1000);
   });
 
-  // Keep the emblem swapped through React hydration, then watch the header
-  // (scoped) so it also survives later re-renders such as the theme toggle.
+  // Keep the emblem swapped through React hydration, then watch the header so
+  // it also survives later client-side re-renders.
   let logoTicks = 0;
   const logoTimer = window.setInterval(() => {
     ensureLogo();

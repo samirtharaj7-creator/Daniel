@@ -54,10 +54,6 @@ body.mbe-shell-managed > div.fixed[class*="top-16"][class*="z-40"] {
   top: calc(46px + 4rem) !important;
 }
 
-body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] button[aria-label="Toggle color theme"] {
-  display: none !important;
-}
-
 body[data-daniel-chapter] main[data-bible-panel] article > div:first-child > .mt-4.flex.flex-wrap.gap-2 {
   display: none !important;
 }
@@ -262,8 +258,10 @@ body[data-daniel-route="introduction"] main > div > section:first-child {
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: clamp(34rem, 64vh, 46rem);
+  min-height: clamp(30rem, 58vh, 42rem);
+  padding: clamp(4rem, 7vw, 6.5rem) clamp(2rem, 6vw, 5.5rem) !important;
   background: #0b1f3a !important;
+  border-bottom: 1px solid rgba(201, 164, 76, .18) !important;
 }
 
 body[data-daniel-route="introduction"] main > div > section:first-child::before,
@@ -276,25 +274,35 @@ body[data-daniel-route="introduction"] main > div > section:first-child::after {
 }
 
 body[data-daniel-route="introduction"] main > div > section:first-child::before {
+  inset: -4rem -1.5rem -1.5rem;
   background-image:
-    linear-gradient(90deg, rgba(11, 31, 58, .92) 0%, rgba(11, 31, 58, .64) 42%, rgba(11, 31, 58, .16) 100%),
-    linear-gradient(180deg, rgba(11, 31, 58, .18) 0%, rgba(11, 31, 58, .30) 58%, rgba(11, 31, 58, .90) 100%),
-    url("/assets/daniel-introduction-engraving.jpg?v=1");
-  background-position: center right;
+    linear-gradient(90deg, rgba(11, 31, 58, .94) 0%, rgba(11, 31, 58, .72) 38%, rgba(11, 31, 58, .20) 72%, rgba(11, 31, 58, .08) 100%),
+    linear-gradient(180deg, rgba(11, 31, 58, .18) 0%, rgba(11, 31, 58, .20) 42%, rgba(11, 31, 58, .62) 78%, rgba(8, 21, 33, .96) 100%),
+    url("/assets/daniel-introduction-engraving.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover;
-  opacity: .9;
-  transform: scale(1.01);
+  opacity: .76;
+  transform: scale(1.025);
+  transform-origin: center top;
+  filter: saturate(.86) contrast(.96) brightness(.86);
 }
 
 body[data-daniel-route="introduction"] main > div > section:first-child::after {
   background:
-    radial-gradient(circle at 18% 48%, rgba(201, 164, 76, .12) 0%, transparent 34%),
-    linear-gradient(180deg, transparent 0%, rgba(8, 21, 33, .78) 100%);
+    radial-gradient(ellipse at 16% 56%, rgba(11, 31, 58, .96) 0%, rgba(11, 31, 58, .70) 34%, transparent 62%),
+    radial-gradient(ellipse at 74% 24%, rgba(201, 164, 76, .09) 0%, transparent 42%),
+    linear-gradient(90deg, rgba(11, 31, 58, .86) 0%, rgba(11, 31, 58, .36) 42%, rgba(11, 31, 58, .12) 100%),
+    linear-gradient(180deg, rgba(5, 15, 28, .08) 0%, rgba(5, 15, 28, 0) 34%, rgba(8, 21, 33, .34) 76%, #081521 100%);
 }
 
 body[data-daniel-route="introduction"] main > div > section:first-child > div {
   position: relative;
   z-index: 1;
+  width: 100% !important;
+  max-width: 100rem !important;
+  margin: 0 auto !important;
+  padding: clamp(1.25rem, 3vw, 2.25rem) 0 !important;
 }
 
 body[data-daniel-route="introduction"] main > div > section:first-child h1,
@@ -325,14 +333,178 @@ body[data-daniel-route="introduction"] main > div > section:first-child .rounded
   backdrop-filter: blur(3px);
 }
 
+body[data-daniel-route="introduction"] main > div > section:first-child > div > p:first-child {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .7rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #d8b866 !important;
+  font-family: "Jost", system-ui, sans-serif !important;
+  font-size: .82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .24em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > p:first-child::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1 {
+  max-width: min(100%, 72rem) !important;
+  margin: 1.25rem 0 0 !important;
+  color: #f3e8cc !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 18px 42px rgba(0, 0, 0, .34);
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1::before,
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1::after {
+  display: block;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1::before {
+  content: "Introduction to the Book of";
+  margin-bottom: 1.125rem;
+  color: #d8b866;
+  font-family: "Jost", system-ui, sans-serif;
+  font-size: clamp(1.32rem, 2.5vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: .18em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1::after {
+  content: "Daniel";
+  color: #f3e8cc;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(4.5rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: .9;
+  white-space: nowrap;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1 + p {
+  max-width: 43rem !important;
+  margin: 1.6rem 0 0 !important;
+  color: #cbbf9e !important;
+  font-family: "EB Garamond", Georgia, serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child > div > h1 + p + div {
+  display: none !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div {
+  padding: .75rem clamp(2rem, 6vw, 5.5rem) 1.8rem !important;
+  border-color: rgba(201, 164, 76, .18) !important;
+  background: linear-gradient(180deg, rgba(11, 31, 58, .98) 0%, rgba(8, 21, 33, .96) 100%) !important;
+  color: #ece0c4 !important;
+  box-shadow: none !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div > div {
+  max-width: 100rem !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div > div > div:first-child {
+  color: #d8b866 !important;
+  border-color: rgba(201, 164, 76, .22) !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div > div > div:first-child p {
+  color: #d8b866 !important;
+  font-family: "Jost", system-ui, sans-serif !important;
+  font-size: .78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .22em !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div nav {
+  gap: .75rem !important;
+  margin-top: 0 !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div nav a {
+  min-height: 3.1rem !important;
+  padding: .8rem 1rem !important;
+  border-color: rgba(201, 164, 76, .22) !important;
+  border-radius: 5px !important;
+  background: rgba(18, 38, 63, .72) !important;
+  color: #b9ad90 !important;
+  font-family: "Jost", system-ui, sans-serif !important;
+  font-size: .86rem !important;
+  font-weight: 600 !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div nav a span:first-child {
+  color: #d8b866 !important;
+}
+
+body[data-daniel-route="introduction"] main > div > section:first-child + div nav a:hover {
+  border-color: rgba(201, 164, 76, .45) !important;
+  background: rgba(201, 164, 76, .12) !important;
+  color: #fff2d4 !important;
+}
+
+body[data-daniel-route="introduction"] main article.max-w-3xl {
+  width: 100%;
+  max-width: none !important;
+}
+
 @media (max-width: 760px) {
   body[data-daniel-route="introduction"] main > div > section:first-child {
-    min-height: auto;
+    min-height: 25rem;
+    padding: 3rem 1.35rem 1.75rem !important;
   }
 
   body[data-daniel-route="introduction"] main > div > section:first-child::before {
-    background-position: 62% center;
-    opacity: .66;
+    background-position: 64% top;
+    opacity: .52;
+  }
+
+  body[data-daniel-route="introduction"] main > div > section:first-child > div > p:first-child {
+    font-size: .72rem !important;
+    letter-spacing: .18em !important;
+  }
+
+  body[data-daniel-route="introduction"] main > div > section:first-child > div > h1::before {
+    margin-bottom: .72rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    letter-spacing: .12em;
+    white-space: normal;
+  }
+
+  body[data-daniel-route="introduction"] main > div > section:first-child > div > h1::after {
+    font-size: 3.75rem;
+    white-space: normal;
+  }
+
+  body[data-daniel-route="introduction"] main > div > section:first-child > div > h1 + p {
+    margin-top: 1.25rem !important;
+    font-size: 1.08rem !important;
+  }
+
+  body[data-daniel-route="introduction"] main > div > section:first-child + div {
+    padding-right: 1.25rem !important;
+    padding-left: 1.25rem !important;
   }
 
   body[data-daniel-route="home"] main > section:first-child > div:first-child {

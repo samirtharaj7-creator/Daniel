@@ -45,6 +45,18 @@
   font-family:var(--mbe-font-ui);
 }
 
+/* Reserve the ribbon's space until the post-hydration shell attaches. */
+body[data-mbe-shell-pending="true"]::before{
+  content:"";
+  display:block;
+  width:100%;
+  height:46px;
+  min-height:46px;
+  flex:0 0 46px;
+  background:linear-gradient(180deg,#0e2138 0%,#0b1f3a 100%);
+  border-bottom:1px solid rgba(201,164,76,.18);
+}
+
 .mbe-global-shell + .site-header{
   top:46px;
 }

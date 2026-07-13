@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Farticles\u002F[slug]","\u002Fchapters\u002F[chapter]","\u002Fcharts\u002F[chart]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
