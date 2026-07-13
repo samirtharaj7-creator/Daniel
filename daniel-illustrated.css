@@ -415,3 +415,17 @@ body > #root:empty::before {
 
 /* Text selection tint. */
 ::selection { background: rgba(201,164,76,.35); color: #fff6e4; }
+
+/* Keep independently scrolled chapter panes from extending the document's
+   visual overflow below the global footer. */
+html:has(body[data-daniel-chapter]) {
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+body[data-daniel-chapter] {
+  height: 100% !important;
+  min-height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}

@@ -25,7 +25,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=dvx-27';
+    const href = '/daniel-illustrated.css?v=daniel-footer-fit-28';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
