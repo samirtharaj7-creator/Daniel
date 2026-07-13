@@ -12,6 +12,7 @@
   function ensureDarkTheme() {
     document.documentElement.classList.add('dark');
     try {
+      window.localStorage.setItem('daniel-theme', 'dark');
       window.localStorage.setItem('theme', 'dark');
     } catch (error) {
       // Some browsers block localStorage in restricted contexts.
@@ -25,7 +26,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-footer-fit-29';
+    const href = '/daniel-illustrated.css?v=daniel-initial-dark-35';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -48,7 +49,6 @@
     document.body.removeAttribute('data-daniel-route');
     document.body.removeAttribute('data-daniel-chapter');
     document.body.removeAttribute('data-daniel-chart');
-    document.body.style.removeProperty('--daniel-titleplate-image');
 
     if (path === '/') {
       document.body.setAttribute('data-daniel-route', 'home');
