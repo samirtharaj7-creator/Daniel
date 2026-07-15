@@ -335,7 +335,7 @@ main > section:first-child > div:first-child::before {
   background-image:
     linear-gradient(90deg, rgba(11, 31, 58, .72) 0%, rgba(11, 31, 58, .28) 36%, rgba(11, 31, 58, .08) 100%),
     linear-gradient(180deg, rgba(11, 31, 58, .03) 0%, rgba(11, 31, 58, .32) 57%, rgba(11, 31, 58, .9) 100%),
-    url("/assets/daniel-hero-engraving.jpg");
+    url("/assets/daniel-hero-engraving.jpg?v=mbe-20260715-1");
   background-position: center top;
   background-size: cover;
   opacity: .86;
