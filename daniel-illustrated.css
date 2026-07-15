@@ -71,7 +71,29 @@ body[data-daniel-chapter] main[data-bible-panel] article > div:first-child + div
   display: none !important;
 }
 
+@keyframes daniel-inline-note-open {
+  from {
+    opacity: 0;
+    transform: translateY(-.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 1023px) {
+  body[data-daniel-chapter] button[aria-label="Open study notes"],
+  body[data-daniel-chapter] aside[data-commentary-panel],
+  body[data-daniel-chapter] .fixed.inset-0.z-40[class*="bg-black/45"] {
+    display: none !important;
+  }
+
+  body[data-daniel-chapter] main[data-bible-panel] button[id^="v-"][aria-expanded="true"] {
+    border-color: hsl(var(--primary) / .72) !important;
+    box-shadow: inset 3px 0 0 hsl(var(--primary)) !important;
+  }
+
   body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] {
     display: block !important;
     margin: .85rem 0 1.15rem !important;
@@ -84,6 +106,9 @@ body[data-daniel-chapter] main[data-bible-panel] article > div:first-child + div
       inset 0 1px 0 rgba(255, 255, 255, .04),
       0 18px 36px -28px rgba(0, 0, 0, .85) !important;
     font-family: var(--font-sans) !important;
+    overflow: hidden !important;
+    transform-origin: top center;
+    animation: daniel-inline-note-open .2s ease-out both;
   }
 
   body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] > div:first-child {
@@ -108,6 +133,12 @@ body[data-daniel-chapter] main[data-bible-panel] article > div:first-child + div
 
   body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] p {
     color: hsl(var(--foreground) / .9) !important;
+  }
+}
+
+@media (max-width: 1023px) and (prefers-reduced-motion: reduce) {
+  body[data-daniel-chapter] .daniel-inline-note[data-daniel-inline-note] {
+    animation: none;
   }
 }
 

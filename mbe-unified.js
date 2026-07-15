@@ -21,7 +21,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-study-48';
+    const href = '/daniel-illustrated.css?v=daniel-study-53';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -72,10 +72,12 @@
   }
 
   const MOBILE_INLINE_NOTES_QUERY = '(max-width: 1023px)';
-  const DANIEL_STUDY_REVISION = 'daniel-study-48';
+  const DANIEL_STUDY_REVISION = 'daniel-study-53';
   const danielStudyBundles = new Map();
   let danielStudySupportsReady = false;
+  let danielInlineNotesReady = false;
   let inlineNoteRequestId = 0;
+  let pendingInlineVerse = null;
 
   function studyEscape(value) {
     return String(value == null ? '' : value)
@@ -169,6 +171,7 @@
       window.requestAnimationFrame(() => {
         queued = false;
         ensureActiveWordPhraseNotes();
+        syncInlineStudyNoteTriggers();
       });
     };
     new MutationObserver(queue).observe(document.body, { childList: true, subtree: true });
@@ -178,11 +181,8 @@
     if (danielStudySupportsReady) return;
     danielStudySupportsReady = true;
     installWordPhraseNotes();
-
-    if (!isInlineNotesViewport()) return;
-    const match = (window.location.hash || '').match(/^#v-?(\d+)$/);
-    const verseButton = match && document.getElementById('v-' + Number(match[1]));
-    if (verseButton) queueInlineStudyNote(verseButton);
+    syncInlineStudyNoteTriggers();
+    flushPendingInlineStudyNote();
   }
 
   function scheduleDanielStudySupports() {
@@ -197,6 +197,33 @@
 
   function removeInlineStudyNotes() {
     document.querySelectorAll('[data-daniel-inline-note]').forEach((node) => node.remove());
+    if (!danielStudySupportsReady) return;
+    document.querySelectorAll('main[data-bible-panel] button[id^="v-"]').forEach((button) => {
+      if (isInlineNotesViewport()) {
+        button.setAttribute('aria-expanded', 'false');
+      } else {
+        button.removeAttribute('aria-expanded');
+        button.removeAttribute('aria-controls');
+      }
+    });
+  }
+
+  function cancelInlineStudyNotes() {
+    inlineNoteRequestId += 1;
+    pendingInlineVerse = null;
+    removeInlineStudyNotes();
+  }
+
+  function syncInlineStudyNoteTriggers() {
+    if (!danielStudySupportsReady || !isInlineNotesViewport()) return;
+    const active = document.querySelector('[data-daniel-inline-note]');
+    const activeVerse = active && active.getAttribute('data-daniel-inline-note-verse');
+    document.querySelectorAll('main[data-bible-panel] button[id^="v-"]').forEach((button) => {
+      const match = button.id.match(/^v-(\d+)$/);
+      if (!match) return;
+      button.setAttribute('aria-controls', 'inline-note-' + Number(match[1]));
+      button.setAttribute('aria-expanded', String(match[1] === activeVerse));
+    });
   }
 
   function closeMobileStudyDrawer() {
@@ -233,6 +260,9 @@
       return true;
     }
 
+    verseButton = document.getElementById('v-' + verseNumber) || verseButton;
+    if (!verseButton || !verseButton.isConnected) return false;
+
     const sourceNote = document.getElementById('note-' + verseNumber);
     if (!sourceNote) return false;
     if (!sourceNote.querySelector('[data-daniel-word-notes]')) {
@@ -250,11 +280,14 @@
     note.classList.add('daniel-inline-note');
     note.setAttribute('data-daniel-inline-note', '');
     note.setAttribute('data-daniel-inline-note-verse', String(verseNumber));
+    note.setAttribute('data-state', 'open');
     note.setAttribute('role', 'region');
     note.setAttribute('aria-label', 'Study note for verse ' + verseNumber);
     note.removeAttribute('aria-live');
 
     verseBlock.insertAdjacentElement('afterend', note);
+    verseButton.setAttribute('aria-controls', note.id);
+    verseButton.setAttribute('aria-expanded', 'true');
     closeMobileStudyDrawer();
     window.setTimeout(closeMobileStudyDrawer, 80);
     return true;
@@ -265,21 +298,47 @@
     if (!match) return;
 
     const verseNumber = Number(match[1]);
-    const requestId = ++inlineNoteRequestId;
-
     if (!isInlineNotesViewport()) {
-      removeInlineStudyNotes();
+      cancelInlineStudyNotes();
       return;
     }
 
+    if (!danielInlineNotesReady || !danielStudySupportsReady) {
+      inlineNoteRequestId += 1;
+      pendingInlineVerse = pendingInlineVerse === verseNumber ? null : verseNumber;
+      removeInlineStudyNotes();
+      closeMobileStudyDrawer();
+      return;
+    }
+
+    const openNote = document.querySelector('[data-daniel-inline-note-verse="' + verseNumber + '"]');
+    if (openNote || pendingInlineVerse === verseNumber) {
+      cancelInlineStudyNotes();
+      closeMobileStudyDrawer();
+      return;
+    }
+
+    const requestId = ++inlineNoteRequestId;
+    pendingInlineVerse = verseNumber;
     removeInlineStudyNotes();
 
     [0, 80, 180, 360, 700, 1100].forEach((delay) => {
       window.setTimeout(() => {
         if (requestId !== inlineNoteRequestId) return;
-        if (cloneStudyNoteUnderVerse(verseButton, verseNumber)) inlineNoteRequestId += 1;
+        if (cloneStudyNoteUnderVerse(verseButton, verseNumber)) {
+          pendingInlineVerse = null;
+          inlineNoteRequestId += 1;
+        }
       }, delay);
     });
+  }
+
+  function flushPendingInlineStudyNote() {
+    if (!danielInlineNotesReady || !danielStudySupportsReady || pendingInlineVerse == null) return;
+    const verseNumber = pendingInlineVerse;
+    const verseButton = document.getElementById('v-' + verseNumber);
+    pendingInlineVerse = null;
+    if (verseButton) queueInlineStudyNote(verseButton);
   }
 
   function installInlineStudyNotes() {
@@ -291,7 +350,7 @@
       if (!target || typeof target.closest !== 'function') return;
 
       if (target.closest('button[aria-label="Open study notes"]')) {
-        removeInlineStudyNotes();
+        cancelInlineStudyNotes();
         return;
       }
 
@@ -304,7 +363,8 @@
     if (window.matchMedia) {
       const media = window.matchMedia(MOBILE_INLINE_NOTES_QUERY);
       const handleViewportChange = () => {
-        if (!media.matches) removeInlineStudyNotes();
+        if (!media.matches) cancelInlineStudyNotes();
+        else syncInlineStudyNoteTriggers();
       };
       if (typeof media.addEventListener === 'function') {
         media.addEventListener('change', handleViewportChange);
@@ -1228,16 +1288,19 @@
     window.addEventListener('popstate', queueRefresh);
   }
 
-  ensureDarkTheme();
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ensureShell, { once: true });
-  } else {
+  const schedulePageEnhancements = () => window.setTimeout(() => {
     ensureShell();
-  }
+    danielInlineNotesReady = true;
+    flushPendingInlineStudyNote();
+  }, 120);
+
+  ensureDarkTheme();
+  installInlineStudyNotes();
+  if (document.readyState === 'complete') schedulePageEnhancements();
+  else window.addEventListener('load', schedulePageEnhancements, { once: true });
   installRouteWatcher();
   scheduleDanielStudySupports();
   window.addEventListener('load', () => {
-    ensureShell();
     window.setTimeout(ensureShell, 300);
     window.setTimeout(ensureShell, 1000);
   });
