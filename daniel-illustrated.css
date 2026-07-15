@@ -111,6 +111,102 @@ body[data-daniel-chapter] main[data-bible-panel] article > div:first-child + div
   }
 }
 
+body[data-daniel-chapter] .daniel-word-notes {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: .375rem;
+  background: hsl(var(--background) / .72);
+}
+
+body[data-daniel-chapter] .daniel-word-notes-title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .8rem;
+  color: hsl(var(--primary));
+  font-family: var(--font-sans);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+body[data-daniel-chapter] .daniel-word-notes-title svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+}
+
+body[data-daniel-chapter] .daniel-word-notes-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem 1.15rem;
+}
+
+body[data-daniel-chapter] .daniel-word-note {
+  min-width: 0;
+  padding-left: .85rem;
+  border-left: 3px solid hsl(var(--primary) / .7);
+}
+
+body[data-daniel-chapter] .daniel-word-note h3 {
+  margin: 0;
+  color: hsl(var(--primary));
+  font-family: var(--font-sans) !important;
+  font-size: .98rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+body[data-daniel-chapter] .daniel-word-note p {
+  margin: .35rem 0 0;
+  color: hsl(var(--foreground) / .9);
+  font-family: var(--font-sans);
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+body[data-daniel-chapter] .daniel-word-note-references {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: .65rem;
+}
+
+body[data-daniel-chapter] .daniel-word-note-references span {
+  max-width: 100%;
+  padding: .22rem .52rem;
+  overflow-wrap: anywhere;
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  background: hsl(var(--secondary) / .76);
+  color: hsl(var(--secondary-foreground));
+  font-family: var(--font-sans);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+@media (max-width: 760px) {
+  body[data-daniel-chapter] .daniel-word-notes-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-daniel-chapter] .daniel-word-notes {
+    padding: .9rem;
+  }
+
+  body[data-daniel-chapter] .daniel-word-note p {
+    font-size: .92rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
 @media (max-width: 760px) {
   body.mbe-shell-managed > header.sticky[class*="top-0"][class*="z-50"][class*="border-b"] > div:first-child {
     height: 3.75rem !important;

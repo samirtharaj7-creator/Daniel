@@ -1,0 +1,1894 @@
+{
+  "schemaVersion": 1,
+  "revision": "daniel-study-47",
+  "chapter": 11,
+  "notes": [
+    {
+      "verse": 1,
+      "reference": "Daniel 11:1",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: first year of Darius",
+          "meaning": "Daniel 11 opens by looking back to the first year of Darius the Mede, about 539/538 B.C., the transition year after Babylon fell. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:1",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "first year of Darius",
+          "explanation": "Daniel 11 opens by looking back to the first year of Darius the Mede, about 539/538 B.C., the transition year after Babylon fell.",
+          "scriptureReferences": [
+            "Daniel 11:1",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "confirm and to strengthen",
+          "explanation": "The final vision itself was received in the third year of Cyrus in Daniel 10, about 536/535 B.C., but the messenger begins by remembering how he stood to confirm and strengthen Darius at the start of Medo-Persian rule.",
+          "scriptureReferences": [
+            "Daniel 11:1",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 2,
+      "reference": "Daniel 11:2",
+      "crossReferences": [
+        "Daniel 8:20-21",
+        "Ezra 1:1-4",
+        "Esther 1:1-4"
+      ],
+      "crossReferenceNotes": "Daniel 8 identifies Medo-Persia and Greece before Daniel 11 expands the same transition in historical sequence.",
+      "symbols": [
+        {
+          "symbol": "Fourth Persian king",
+          "meaning": "Xerxes, the wealthy Persian ruler who stirred up conflict with Greece.",
+          "references": [
+            "Daniel 11:2",
+            "Esther 1:1-4",
+            "Daniel 8:20-21"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "stand up yet three kings in Persia",
+          "explanation": "After Cyrus, the three Persian kings are Cambyses II, the brief usurper Bardiya or Gaumata often called False Smerdis, and Darius I Hystaspes.",
+          "scriptureReferences": [
+            "Daniel 11:2",
+            "Daniel 8:20-21",
+            "Ezra 1:1-4",
+            "Esther 1:1-4"
+          ]
+        },
+        {
+          "term": "fourth shall be far richer",
+          "explanation": "The fourth is Xerxes, who becomes especially rich and stirs up conflict with Greece.",
+          "scriptureReferences": [
+            "Daniel 11:2",
+            "Daniel 8:20-21",
+            "Ezra 1:1-4",
+            "Esther 1:1-4"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 3,
+      "reference": "Daniel 11:3",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: mighty king",
+          "meaning": "A mighty king rises, rules with great dominion, and does according to his will. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:3",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "mighty king",
+          "explanation": "A mighty king rises, rules with great dominion, and does according to his will.",
+          "scriptureReferences": [
+            "Daniel 11:3",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "great dominion",
+          "explanation": "The language is brief, but it captures the astonishing career of Alexander the Great, whose Greek armies moved with speed and force after Persia's dominance weakened.",
+          "scriptureReferences": [
+            "Daniel 11:3",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 4,
+      "reference": "Daniel 11:4",
+      "crossReferences": [
+        "Daniel 8:8",
+        "Daniel 8:21-22"
+      ],
+      "crossReferenceNotes": "Daniel 8 and Daniel 11 agree that Greece would not remain united after its first great ruler.",
+      "symbols": [
+        {
+          "symbol": "Four winds",
+          "meaning": "The fourfold division of Alexander's empire after his death.",
+          "references": [
+            "Daniel 8:8",
+            "Daniel 11:4"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "four winds of heaven",
+          "explanation": "At the height of Alexander's power, his kingdom is broken and divided toward the four winds of heaven.",
+          "scriptureReferences": [
+            "Daniel 11:4",
+            "Daniel 8:8",
+            "Daniel 8:21-22"
+          ]
+        },
+        {
+          "term": "divided toward the four",
+          "explanation": "At the height of Alexander's power, his kingdom is broken and divided toward the four winds of heaven.",
+          "scriptureReferences": [
+            "Daniel 11:4",
+            "Daniel 8:8",
+            "Daniel 8:21-22"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 5,
+      "reference": "Daniel 11:5",
+      "crossReferences": [
+        "Daniel 11:5-16"
+      ],
+      "crossReferenceNotes": "North and south are first measured from the covenant land, which lay between Syria and Egypt.",
+      "symbols": [
+        {
+          "symbol": "King of the south",
+          "meaning": "Egypt under the Ptolemies in the early north-south section of the prophecy.",
+          "references": [
+            "Daniel 11:5",
+            "Daniel 11:8"
+          ]
+        },
+        {
+          "symbol": "King of the north",
+          "meaning": "The Seleucid power centered north of the covenant land before Rome takes the northern role.",
+          "references": [
+            "Daniel 11:5",
+            "Daniel 11:15-16"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "king of the south",
+          "explanation": "The line opens with the strength of the king of the south, Ptolemy I Soter in Egypt, but it ends with Seleucus I Nicator becoming stronger and holding the greater dominion through the Seleucid kingdom that stretched from Syria deep into the eastern territories.",
+          "scriptureReferences": [
+            "Daniel 11:5",
+            "Daniel 11:5-16"
+          ]
+        },
+        {
+          "term": "one of his princes",
+          "explanation": "Daniel now narrows the prophecy from the four Greek divisions to two lines of pressure around the covenant land.",
+          "scriptureReferences": [
+            "Daniel 11:5",
+            "Daniel 11:5-16"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 6,
+      "reference": "Daniel 11:6",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: king of the north",
+          "meaning": "After years of conflict, the southern king Ptolemy II Philadelphus tries to secure peace by giving his daughter Berenice in marriage to Antiochus II Theos, the king of the north. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:6",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "king of the north",
+          "explanation": "After years of conflict, the southern king Ptolemy II Philadelphus tries to secure peace by giving his daughter Berenice in marriage to Antiochus II Theos, the king of the north.",
+          "scriptureReferences": [
+            "Daniel 11:6",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "daughter of the south",
+          "explanation": "The alliance looks diplomatic, but Daniel says it will not retain strength; by the end of the episode the southern plan collapses inside the Seleucid court through betrayal and bloodshed.",
+          "scriptureReferences": [
+            "Daniel 11:6",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 7,
+      "reference": "Daniel 11:7",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: branch of her roots",
+          "meaning": "A branch from Berenice's family line rises after her murder. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:7",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "branch of her roots",
+          "explanation": "A branch from Berenice's family line rises after her murder.",
+          "scriptureReferences": [
+            "Daniel 11:7",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "king of the north",
+          "explanation": "Daniel 11:7 keeps the king of the north language tied to the northern side of the conflict.",
+          "scriptureReferences": [
+            "Daniel 11:7",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 8,
+      "reference": "Daniel 11:8",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: precious vessels",
+          "meaning": "Ptolemy III's southern campaign carries idols, princes, and precious vessels back into Egypt. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:8",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "precious vessels",
+          "explanation": "Ptolemy III's southern campaign carries idols, princes, and precious vessels back into Egypt.",
+          "scriptureReferences": [
+            "Daniel 11:8",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "king of the north",
+          "explanation": "Daniel 11:8 keeps the king of the north language tied to the northern side of the conflict.",
+          "scriptureReferences": [
+            "Daniel 11:8",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 9,
+      "reference": "Daniel 11:9",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: king of the south",
+          "meaning": "Daniel 11:9 keeps the king of the south language tied to the southern side of the conflict. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:9",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "king of the south",
+          "explanation": "Daniel 11:9 keeps the king of the south language tied to the southern side of the conflict.",
+          "scriptureReferences": [
+            "Daniel 11:9",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "own land",
+          "explanation": "The southern king returns to his own land after the campaign.",
+          "scriptureReferences": [
+            "Daniel 11:9",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 10,
+      "reference": "Daniel 11:10",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: his sons shall be stirred up",
+          "meaning": "The sons of the northern king gather great forces and renew the Seleucid advance. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:10",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "his sons shall be stirred up",
+          "explanation": "The sons of the northern king gather great forces and renew the Seleucid advance.",
+          "scriptureReferences": [
+            "Daniel 11:10",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "great forces",
+          "explanation": "The sons of the northern king gather great forces and renew the Seleucid advance.",
+          "scriptureReferences": [
+            "Daniel 11:10",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 11,
+      "reference": "Daniel 11:11",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: king of the north",
+          "meaning": "The king of the south, Ptolemy IV Philopator, fights the king of the north, Antiochus III, and gains a major victory. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:11",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "king of the north",
+          "explanation": "The king of the south, Ptolemy IV Philopator, fights the king of the north, Antiochus III, and gains a major victory.",
+          "scriptureReferences": [
+            "Daniel 11:11",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "moved with choler",
+          "explanation": "This fits the Battle of Raphia in 217 B.C., where Egypt checked the Seleucid advance and received a large multitude into its hand.",
+          "scriptureReferences": [
+            "Daniel 11:11",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 12,
+      "reference": "Daniel 11:12",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: lifted up",
+          "meaning": "After Ptolemy IV's great victory, his heart is lifted up. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:12",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "lifted up",
+          "explanation": "After Ptolemy IV's great victory, his heart is lifted up.",
+          "scriptureReferences": [
+            "Daniel 11:12",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "down many",
+          "explanation": "He casts down many, but he is not strengthened by the triumph; the south has the immediate advantage, yet the victory is spiritually and politically hollow.",
+          "scriptureReferences": [
+            "Daniel 11:12",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 13,
+      "reference": "Daniel 11:13",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: king of the north shall return",
+          "meaning": "The king of the north returns after years with a greater multitude and more resources than before. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:13",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "king of the north shall return",
+          "explanation": "The king of the north returns after years with a greater multitude and more resources than before.",
+          "scriptureReferences": [
+            "Daniel 11:13",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "great army and with much riches",
+          "explanation": "Antiochus III rebuilds Seleucid strength after Raphia and comes again when Egypt is weakened under the young Ptolemy V Epiphanes.",
+          "scriptureReferences": [
+            "Daniel 11:13",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 14,
+      "reference": "Daniel 11:14",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: establish the vision",
+          "meaning": "Those who try to establish the vision by self-exalting methods only show that they have not understood the God who gave it. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:14",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "establish the vision",
+          "explanation": "Those who try to establish the vision by self-exalting methods only show that they have not understood the God who gave it.",
+          "scriptureReferences": [
+            "Daniel 11:14",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "king of the south",
+          "explanation": "Many stand up against the king of the south.",
+          "scriptureReferences": [
+            "Daniel 11:14",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 15,
+      "reference": "Daniel 11:15",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: most fenced cities",
+          "meaning": "The king of the north takes fortified cities, and the arms of the south cannot withstand him. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:15",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "most fenced cities",
+          "explanation": "The king of the north takes fortified cities, and the arms of the south cannot withstand him.",
+          "scriptureReferences": [
+            "Daniel 11:15",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "arms of the south",
+          "explanation": "Daniel's north-south section keeps showing how unstable earthly protection can be.",
+          "scriptureReferences": [
+            "Daniel 11:15",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 16,
+      "reference": "Daniel 11:16",
+      "crossReferences": [
+        "Daniel 8:9-12",
+        "Daniel 9:24-27",
+        "Luke 2:1",
+        "Luke 3:1",
+        "John 19:15-16"
+      ],
+      "crossReferenceNotes": "Rome's entrance into the glorious land prepares the setting for the taxation of Augustus, the rule of Tiberius, and the cross.",
+      "symbols": [
+        {
+          "symbol": "Glorious land",
+          "meaning": "The covenant land where Rome would stand before the Messiah's appearing and Jerusalem's later destruction.",
+          "references": [
+            "Daniel 11:16",
+            "Daniel 9:26",
+            "Luke 2:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "glorious land",
+          "explanation": "He stands in the glorious land, which is consumed by his hand.",
+          "scriptureReferences": [
+            "Daniel 11:16",
+            "Daniel 8:9-12",
+            "Daniel 9:24-27",
+            "Luke 2:1"
+          ]
+        },
+        {
+          "term": "which by his hand shall be consumed",
+          "explanation": "A new power comes according to his own will, and none can stand before him.",
+          "scriptureReferences": [
+            "Daniel 11:16",
+            "Daniel 8:9-12",
+            "Daniel 9:24-27",
+            "Luke 2:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 17,
+      "reference": "Daniel 11:17",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: daughter of women",
+          "meaning": "The ruler sets his face to enter with the strength of his whole kingdom and brings an arrangement involving a daughter of women, but the plan does not finally stand for him. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:17",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "daughter of women",
+          "explanation": "The ruler sets his face to enter with the strength of his whole kingdom and brings an arrangement involving a daughter of women, but the plan does not finally stand for him.",
+          "scriptureReferences": [
+            "Daniel 11:17",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "upright ones",
+          "explanation": "Jewish support under Antipater helped Caesar, which explains the reference to upright ones joining the movement.",
+          "scriptureReferences": [
+            "Daniel 11:17",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 18,
+      "reference": "Daniel 11:18",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: turn his face unto the isles",
+          "meaning": "The ruler turns toward the isles and takes many, but a prince causes the reproach to cease and turns it back on him. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:18",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "turn his face unto the isles",
+          "explanation": "The ruler turns toward the isles and takes many, but a prince causes the reproach to cease and turns it back on him.",
+          "scriptureReferences": [
+            "Daniel 11:18",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "a prince for his own behalf",
+          "explanation": "The line fits Julius Caesar's campaigns beyond the eastern Mediterranean world and the eventual check placed upon his course.",
+          "scriptureReferences": [
+            "Daniel 11:18",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 19,
+      "reference": "Daniel 11:19",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: fort of his own land",
+          "meaning": "The ruler turns toward the fort of his own land, but he stumbles, falls, and is not found. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:19",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "fort of his own land",
+          "explanation": "The ruler turns toward the fort of his own land, but he stumbles, falls, and is not found.",
+          "scriptureReferences": [
+            "Daniel 11:19",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "stumble and fall",
+          "explanation": "The empire-building energy that conquered abroad could not secure peace within its own political heart.",
+          "scriptureReferences": [
+            "Daniel 11:19",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 20,
+      "reference": "Daniel 11:20",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: raiser of taxes",
+          "meaning": "Another ruler stands up as a raiser of taxes in the glory of the kingdom, but he is destroyed neither in anger nor in battle. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:20",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "raiser of taxes",
+          "explanation": "Another ruler stands up as a raiser of taxes in the glory of the kingdom, but he is destroyed neither in anger nor in battle.",
+          "scriptureReferences": [
+            "Daniel 11:20",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "within few days",
+          "explanation": "Luke 2 places the birth of Christ in the setting of a decree from Caesar Augustus that all the world should be taxed.",
+          "scriptureReferences": [
+            "Daniel 11:20",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 21,
+      "reference": "Daniel 11:21",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: vile person",
+          "meaning": "A vile person stands up without the honor of the kingdom, yet he comes in peaceably and obtains the kingdom by flatteries. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:21",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "vile person",
+          "explanation": "A vile person stands up without the honor of the kingdom, yet he comes in peaceably and obtains the kingdom by flatteries.",
+          "scriptureReferences": [
+            "Daniel 11:21",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "kingdom by flatteries",
+          "explanation": "A vile person stands up without the honor of the kingdom, yet he comes in peaceably and obtains the kingdom by flatteries.",
+          "scriptureReferences": [
+            "Daniel 11:21",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 22,
+      "reference": "Daniel 11:22",
+      "crossReferences": [
+        "Daniel 9:24-27",
+        "Matthew 21:43",
+        "Acts 7:51-60",
+        "Galatians 3:28-29",
+        "1 Peter 2:9-10"
+      ],
+      "crossReferenceNotes": "The cutting off of Messiah marks the covenant center of the passage and explains why later language expands from local Israel to the worldwide people of Christ.",
+      "symbols": [
+        {
+          "symbol": "Prince of the covenant",
+          "meaning": "Christ, cut off under Roman authority as Daniel 9 foretold.",
+          "references": [
+            "Daniel 9:24-27",
+            "Daniel 11:22",
+            "Isaiah 53:8"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "prince of the covenant",
+          "explanation": "The arms of a flood are swept away, and the Prince of the covenant is broken.",
+          "scriptureReferences": [
+            "Daniel 11:22",
+            "Daniel 9:24-27",
+            "Matthew 21:43",
+            "Acts 7:51-60"
+          ]
+        },
+        {
+          "term": "arms of a flood",
+          "explanation": "The arms of a flood are swept away, and the Prince of the covenant is broken.",
+          "scriptureReferences": [
+            "Daniel 11:22",
+            "Daniel 9:24-27",
+            "Matthew 21:43",
+            "Acts 7:51-60"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 23,
+      "reference": "Daniel 11:23",
+      "crossReferences": [
+        "Daniel 7:8",
+        "Daniel 7:24-25",
+        "Daniel 8:11-13",
+        "Daniel 12:11",
+        "2 Thessalonians 2:3-8",
+        "Revelation 13:5-7"
+      ],
+      "crossReferenceNotes": "Daniel 7, Daniel 8, Daniel 11, and Paul describe the same broad movement from Roman power toward religious self-exaltation.",
+      "symbols": [
+        {
+          "symbol": "League and deceit",
+          "meaning": "The rise of religious-political compromise through alliance rather than open conquest.",
+          "references": [
+            "Daniel 11:23",
+            "2 Thessalonians 2:3-8"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "after the league made with him",
+          "explanation": "After a league is made, the power works deceitfully and becomes strong with a small people.",
+          "scriptureReferences": [
+            "Daniel 11:23",
+            "Daniel 7:8",
+            "Daniel 7:24-25",
+            "Daniel 8:11-13"
+          ]
+        },
+        {
+          "term": "strong with a small people",
+          "explanation": "After a league is made, the power works deceitfully and becomes strong with a small people.",
+          "scriptureReferences": [
+            "Daniel 11:23",
+            "Daniel 7:8",
+            "Daniel 7:24-25",
+            "Daniel 8:11-13"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 24,
+      "reference": "Daniel 11:24",
+      "crossReferences": [
+        "Daniel 7:8",
+        "Daniel 7:24-25",
+        "Daniel 8:11-13",
+        "Daniel 12:11",
+        "2 Thessalonians 2:3-8",
+        "Revelation 13:5-7"
+      ],
+      "crossReferenceNotes": "The transition section should be read with Daniel 7, Daniel 8, and Daniel 12 because all three address the rise and activity of the same later power.",
+      "symbols": [
+        {
+          "symbol": "For a time",
+          "meaning": "A prophetic period connected with the rise of the compromised religious-political power.",
+          "references": [
+            "Daniel 11:24",
+            "Daniel 12:11"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "enter peaceably",
+          "explanation": "The power enters peaceably into rich places, scatters spoil, and devises plans for a time.",
+          "scriptureReferences": [
+            "Daniel 11:24",
+            "Daniel 7:8",
+            "Daniel 7:24-25",
+            "Daniel 8:11-13"
+          ]
+        },
+        {
+          "term": "fattest places of the province",
+          "explanation": "The action is not described as a sudden battlefield victory but as a strategic spread of influence.",
+          "scriptureReferences": [
+            "Daniel 11:24",
+            "Daniel 7:8",
+            "Daniel 7:24-25",
+            "Daniel 8:11-13"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 25,
+      "reference": "Daniel 11:25",
+      "crossReferences": [
+        "Daniel 11:22-31",
+        "2 Thessalonians 2:3-8"
+      ],
+      "crossReferenceNotes": "Verses 24-31 include a careful transition where interpreters differ on timing, but the movement reaches the same church-state abomination.",
+      "symbols": [
+        {
+          "symbol": "North and south transition",
+          "meaning": "The king of the north increasingly points to papal Rome, while the south takes on the character of pagan resistance.",
+          "references": [
+            "Daniel 11:25",
+            "Daniel 11:31",
+            "Daniel 12:11"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "king of the south",
+          "explanation": "The king of the north stirs up power and courage against the king of the south with a great army, while the king of the south responds with a very great and mighty army but does not stand.",
+          "scriptureReferences": [
+            "Daniel 11:25",
+            "Daniel 11:22-31",
+            "2 Thessalonians 2:3-8"
+          ]
+        },
+        {
+          "term": "very great and mighty",
+          "explanation": "The king of the north stirs up power and courage against the king of the south with a great army, while the king of the south responds with a very great and mighty army but does not stand.",
+          "scriptureReferences": [
+            "Daniel 11:25",
+            "Daniel 11:22-31",
+            "2 Thessalonians 2:3-8"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 26,
+      "reference": "Daniel 11:26",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: they that feed of the portion of his meat",
+          "meaning": "Those who eat the king's meat destroy him, his army overflows, and many fall slain. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:26",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "they that feed of the portion of his meat",
+          "explanation": "Those who eat the king's meat destroy him, his army overflows, and many fall slain.",
+          "scriptureReferences": [
+            "Daniel 11:26",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "army shall overflow",
+          "explanation": "In the transition reading, this fits the collapse of pagan resistance from within.",
+          "scriptureReferences": [
+            "Daniel 11:26",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 27,
+      "reference": "Daniel 11:27",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: both these kings hearts",
+          "meaning": "Both kings sit at one table with hearts set on mischief, speaking lies, but the matter does not prosper because the end is still for the appointed time. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:27",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "both these kings hearts",
+          "explanation": "Both kings sit at one table with hearts set on mischief, speaking lies, but the matter does not prosper because the end is still for the appointed time.",
+          "scriptureReferences": [
+            "Daniel 11:27",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "lies at one table",
+          "explanation": "A treaty table can sound peaceful while the heart remains set on mischief.",
+          "scriptureReferences": [
+            "Daniel 11:27",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 28,
+      "reference": "Daniel 11:28",
+      "crossReferences": [
+        "Daniel 9:24-27",
+        "Hebrews 8:1-2",
+        "John 18:36"
+      ],
+      "crossReferenceNotes": "The covenant issue is worship under Christ's authority, not worship reshaped by civil power.",
+      "symbols": [
+        {
+          "symbol": "Holy covenant",
+          "meaning": "God's authority over worship, conscience, and covenant loyalty.",
+          "references": [
+            "Daniel 11:28",
+            "Daniel 9:27",
+            "Hebrews 8:1-2"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "holy covenant",
+          "explanation": "The ruler returns with great riches, and his heart is against the holy covenant.",
+          "scriptureReferences": [
+            "Daniel 11:28",
+            "Daniel 9:24-27",
+            "Hebrews 8:1-2",
+            "John 18:36"
+          ]
+        },
+        {
+          "term": "great riches",
+          "explanation": "The ruler returns with great riches, and his heart is against the holy covenant.",
+          "scriptureReferences": [
+            "Daniel 11:28",
+            "Daniel 9:24-27",
+            "Hebrews 8:1-2",
+            "John 18:36"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 29,
+      "reference": "Daniel 11:29",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: time appointed",
+          "meaning": "At the appointed time the power returns toward the south, but this movement is not like the former or the latter. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:29",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "time appointed",
+          "explanation": "At the appointed time the power returns toward the south, but this movement is not like the former or the latter.",
+          "scriptureReferences": [
+            "Daniel 11:29",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "return and come toward the south",
+          "explanation": "The movement toward the south is part of the broader struggle by which pagan political resistance gave way before the Christianized imperial order.",
+          "scriptureReferences": [
+            "Daniel 11:29",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 30,
+      "reference": "Daniel 11:30",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: ships of Chittim",
+          "meaning": "Ships of Chittim come against him; he is grieved, returns, and has indignation against the holy covenant. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:30",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "ships of Chittim",
+          "explanation": "Ships of Chittim come against him; he is grieved, returns, and has indignation against the holy covenant.",
+          "scriptureReferences": [
+            "Daniel 11:30",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "forsake the holy covenant",
+          "explanation": "The phrase 'have intelligence with them that forsake the holy covenant' is sobering.",
+          "scriptureReferences": [
+            "Daniel 11:30",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 31,
+      "reference": "Daniel 11:31",
+      "crossReferences": [
+        "Daniel 7:8",
+        "Daniel 7:24-25",
+        "Daniel 8:11-13",
+        "Daniel 12:11",
+        "2 Thessalonians 2:3-8",
+        "Revelation 13:5-7"
+      ],
+      "crossReferenceNotes": "Daniel 12:11 links the removal of the daily and the setting up of the abomination with the 1290 years, while Daniel 7 and Revelation 13 give the related 1260-year supremacy.",
+      "symbols": [
+        {
+          "symbol": "Daily",
+          "meaning": "The continual pagan system displaced as papal Rome rises, while Christ's true heavenly ministry is also obscured by the papal phase.",
+          "references": [
+            "Daniel 8:11-13",
+            "Daniel 11:31",
+            "Daniel 12:11",
+            "Hebrews 8:1-2"
+          ]
+        },
+        {
+          "symbol": "Abomination that maketh desolate",
+          "meaning": "Religious authority joined to civil force in opposition to Christ's truth and His people.",
+          "references": [
+            "Daniel 11:31",
+            "Daniel 12:11",
+            "Matthew 24:15",
+            "Revelation 13:5-7"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "abomination that maketh desolate",
+          "explanation": "Arms stand on his part, the sanctuary of strength is polluted, the daily is taken away, and the abomination that maketh desolate is placed.",
+          "scriptureReferences": [
+            "Daniel 11:31",
+            "Daniel 7:8",
+            "Daniel 7:24-25",
+            "Daniel 8:11-13"
+          ]
+        },
+        {
+          "term": "sanctuary of strength",
+          "explanation": "Still, the sanctuary issue remains Christ-centered because the papal phase obscures the truth of Christ's heavenly ministry through counterfeit priesthood, mediation, sacrifice, and tradition.",
+          "scriptureReferences": [
+            "Daniel 11:31",
+            "Daniel 7:8",
+            "Daniel 7:24-25",
+            "Daniel 8:11-13"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 32,
+      "reference": "Daniel 11:32",
+      "crossReferences": [
+        "Daniel 3:16-18",
+        "Daniel 6:10",
+        "Revelation 14:12"
+      ],
+      "crossReferenceNotes": "Daniel's earlier stories show the same kind of covenant loyalty that prophecy later describes.",
+      "symbols": [
+        {
+          "symbol": "People who know their God",
+          "meaning": "Faithful witnesses strengthened by personal knowledge of God under religious pressure.",
+          "references": [
+            "Daniel 11:32",
+            "Revelation 12:17",
+            "Revelation 14:12"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "wickedly against the covenant",
+          "explanation": "Those who do wickedly against the covenant are corrupted by flatteries, but the people who know their God are strong and do exploits.",
+          "scriptureReferences": [
+            "Daniel 11:32",
+            "Daniel 3:16-18",
+            "Daniel 6:10",
+            "Revelation 14:12"
+          ]
+        },
+        {
+          "term": "God",
+          "explanation": "Yet God preserved witnesses who knew Him personally and therefore could not be bought by advantage.",
+          "scriptureReferences": [
+            "Daniel 11:32",
+            "Daniel 3:16-18",
+            "Daniel 6:10",
+            "Revelation 14:12"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 33,
+      "reference": "Daniel 11:33",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: they that understand among the people",
+          "meaning": "Those who understand among the people instruct many, yet they suffer by sword, flame, captivity, and spoil for many days. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:33",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "they that understand among the people",
+          "explanation": "Those who understand among the people instruct many, yet they suffer by sword, flame, captivity, and spoil for many days.",
+          "scriptureReferences": [
+            "Daniel 11:33",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "instruct many",
+          "explanation": "The little horn uses pressure and persecution; God's people instruct, endure, and bear witness.",
+          "scriptureReferences": [
+            "Daniel 11:33",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 34,
+      "reference": "Daniel 11:34",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "crossReferenceNotes": "",
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: little help",
+          "meaning": "When the faithful fall, they receive a little help, but many join them with flatteries. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:34",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "little help",
+          "explanation": "When the faithful fall, they receive a little help, but many join them with flatteries.",
+          "scriptureReferences": [
+            "Daniel 11:34",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "many shall cleave",
+          "explanation": "Princes, magistrates, translators, preachers, and common believers aided the recovery of Scripture and gospel truth.",
+          "scriptureReferences": [
+            "Daniel 11:34",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 35,
+      "reference": "Daniel 11:35",
+      "crossReferences": [
+        "Daniel 7:25",
+        "Daniel 12:4",
+        "Daniel 12:7",
+        "Revelation 13:5"
+      ],
+      "crossReferenceNotes": "Daniel 12 locates the time of the end after the time, times, and half a time.",
+      "symbols": [
+        {
+          "symbol": "Time of the end",
+          "meaning": "The period beginning after the 1260 years, marked in prophecy by A.D. 1798.",
+          "references": [
+            "Daniel 7:25",
+            "Daniel 11:35",
+            "Daniel 12:4",
+            "Daniel 12:7"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "time of the end",
+          "explanation": "Some of those with understanding fall, and the purpose is to try, purge, and make white until the time of the end.",
+          "scriptureReferences": [
+            "Daniel 11:35",
+            "Daniel 7:25",
+            "Daniel 12:4",
+            "Daniel 12:7"
+          ]
+        },
+        {
+          "term": "to purge, and to make them white",
+          "explanation": "The time of the end begins after the 1260-year period, reaching its marker in A.D.",
+          "scriptureReferences": [
+            "Daniel 11:35",
+            "Daniel 7:25",
+            "Daniel 12:4",
+            "Daniel 12:7"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 36,
+      "reference": "Daniel 11:36",
+      "crossReferences": [
+        "Daniel 7:25",
+        "Daniel 8:25",
+        "2 Thessalonians 2:3-8",
+        "Revelation 13:5-6"
+      ],
+      "crossReferenceNotes": "The same self-exalting pattern appears in Daniel, Paul, and Revelation.",
+      "symbols": [
+        {
+          "symbol": "Self-exalting king",
+          "meaning": "Papal Rome claiming religious authority above God's Word and against Christ's supremacy.",
+          "references": [
+            "Daniel 7:25",
+            "Daniel 8:25",
+            "Daniel 11:36",
+            "2 Thessalonians 2:4"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "magnify himself above every god",
+          "explanation": "The king acts according to his will, exalts himself, magnifies himself above every god, and speaks marvelous things against the God of gods.",
+          "scriptureReferences": [
+            "Daniel 11:36",
+            "Daniel 7:25",
+            "Daniel 8:25",
+            "2 Thessalonians 2:3-8"
+          ]
+        },
+        {
+          "term": "God of gods",
+          "explanation": "Paul uses the same pattern when he describes the man of sin exalting himself in the temple of God.",
+          "scriptureReferences": [
+            "Daniel 11:36",
+            "Daniel 7:25",
+            "Daniel 8:25",
+            "2 Thessalonians 2:3-8"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 37,
+      "reference": "Daniel 11:37",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: God of his fathers",
+          "meaning": "The king disregards the God of his fathers, the desire of women, and every god, because he magnifies himself above all. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:37",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "God of his fathers",
+          "explanation": "The king disregards the God of his fathers, the desire of women, and every god, because he magnifies himself above all.",
+          "scriptureReferences": [
+            "Daniel 11:37",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "desire of women",
+          "explanation": "The desire of women points to the rejection of marriage through enforced celibacy in the priesthood.",
+          "scriptureReferences": [
+            "Daniel 11:37",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 38,
+      "reference": "Daniel 11:38",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: God of forces",
+          "meaning": "In his place he honors the god of forces, and a god unknown to his fathers with gold, silver, precious stones, and pleasant things. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:38",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "God of forces",
+          "explanation": "In his place he honors the god of forces, and a god unknown to his fathers with gold, silver, precious stones, and pleasant things.",
+          "scriptureReferences": [
+            "Daniel 11:38",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "god whom his fathers knew not",
+          "explanation": "The strange god points to forms of devotion and mediation unknown to apostolic Christianity.",
+          "scriptureReferences": [
+            "Daniel 11:38",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 39,
+      "reference": "Daniel 11:39",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: most strong holds",
+          "meaning": "The king works in strongholds with a strange god, increases glory, causes some to rule over many, and divides land for gain. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:39",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "most strong holds",
+          "explanation": "The king works in strongholds with a strange god, increases glory, causes some to rule over many, and divides land for gain.",
+          "scriptureReferences": [
+            "Daniel 11:39",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "divide the land for gain",
+          "explanation": "This fits the medieval pattern in which religious authority could distribute honors, influence rulers, sanction conquests, and reward loyalty with land or privilege.",
+          "scriptureReferences": [
+            "Daniel 11:39",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 40,
+      "reference": "Daniel 11:40",
+      "crossReferences": [
+        "Daniel 7:25-27",
+        "Daniel 12:1",
+        "Revelation 11:7-13",
+        "Revelation 13:11-17",
+        "Revelation 14:6-12",
+        "Revelation 18:1-4"
+      ],
+      "crossReferenceNotes": "Revelation 11 uses spiritual Egypt language for anti-biblical power, and Revelation 13 describes the wounded beast's recovery.",
+      "symbols": [
+        {
+          "symbol": "King of the south",
+          "meaning": "End-time atheistic and anti-biblical power, patterned after Egypt's defiance of the Lord.",
+          "references": [
+            "Exodus 5:2",
+            "Daniel 11:40",
+            "Revelation 11:8"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "time of the end",
+          "explanation": "At the time of the end, the king of the south pushes at the king of the north, and the king of the north responds like a whirlwind.",
+          "scriptureReferences": [
+            "Daniel 11:40",
+            "Daniel 7:25-27",
+            "Daniel 12:1",
+            "Revelation 11:7-13"
+          ]
+        },
+        {
+          "term": "king of the south",
+          "explanation": "The king of the south, once literal Egypt, now carries the spiritual character of Egypt after the cross-centered transition of the prophecy.",
+          "scriptureReferences": [
+            "Daniel 11:40",
+            "Daniel 7:25-27",
+            "Daniel 12:1",
+            "Revelation 11:7-13"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 41,
+      "reference": "Daniel 11:41",
+      "crossReferences": [
+        "Isaiah 11:11-14",
+        "Revelation 13:11-17",
+        "Revelation 18:4"
+      ],
+      "crossReferenceNotes": "The final crisis includes both a shaking among professed believers and a gathering of sincere people out of confusion.",
+      "symbols": [
+        {
+          "symbol": "Glorious land",
+          "meaning": "The visible Christian world entered by final papal influence and religious alliance.",
+          "references": [
+            "Daniel 11:41",
+            "Revelation 13:11-17"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "glorious land",
+          "explanation": "The king enters the glorious land, many are overthrown, but Edom, Moab, and the chief of the children of Ammon escape out of his hand.",
+          "scriptureReferences": [
+            "Daniel 11:41",
+            "Isaiah 11:11-14",
+            "Revelation 13:11-17",
+            "Revelation 18:4"
+          ]
+        },
+        {
+          "term": "Edom and Moab",
+          "explanation": "Edom, Moab, and Ammon were related to Israel yet often estranged from Israel.",
+          "scriptureReferences": [
+            "Daniel 11:41",
+            "Isaiah 11:11-14",
+            "Revelation 13:11-17",
+            "Revelation 18:4"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 42,
+      "reference": "Daniel 11:42",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: the countries",
+          "meaning": "The king stretches his hand upon the countries, and the land of Egypt does not escape. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:42",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "the countries",
+          "explanation": "The king stretches his hand upon the countries, and the land of Egypt does not escape.",
+          "scriptureReferences": [
+            "Daniel 11:42",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "land of Egypt",
+          "explanation": "The king of the south remains spiritual Egypt in this end-time section, and the conflict broadens beyond one nation or region.",
+          "scriptureReferences": [
+            "Daniel 11:42",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 43,
+      "reference": "Daniel 11:43",
+      "crossReferences": [
+        "Daniel 8:9-14",
+        "Daniel 12:1"
+      ],
+      "symbols": [
+        {
+          "symbol": "Prophetic phrase: treasures of gold and of silver",
+          "meaning": "The king gains power over treasures of gold and silver and over the precious things of Egypt, while the Libyans and Ethiopians follow at his steps. It marks a step in the prophetic sequence rather than introducing a separate coded symbol.",
+          "references": [
+            "Daniel 11:43",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "treasures of gold and of silver",
+          "explanation": "The king gains power over treasures of gold and silver and over the precious things of Egypt, while the Libyans and Ethiopians follow at his steps.",
+          "scriptureReferences": [
+            "Daniel 11:43",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        },
+        {
+          "term": "Libyans and the Ethiopians",
+          "explanation": "Libyans and Ethiopians were associated with the region and support of Egypt.",
+          "scriptureReferences": [
+            "Daniel 11:43",
+            "Daniel 8:9-14",
+            "Daniel 12:1"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 44,
+      "reference": "Daniel 11:44",
+      "crossReferences": [
+        "Psalm 48:1-2",
+        "Daniel 7:9-10",
+        "Revelation 7:2-3",
+        "Revelation 14:6-12"
+      ],
+      "crossReferenceNotes": "The east and north point to the seal of God and the heavenly judgment message proclaimed in Revelation 14.",
+      "symbols": [
+        {
+          "symbol": "Tidings from the east",
+          "meaning": "The sealing message of God that calls people to covenant loyalty.",
+          "references": [
+            "Ezekiel 20:12",
+            "Ezekiel 20:20",
+            "Revelation 7:2-3"
+          ]
+        },
+        {
+          "symbol": "Tidings from the north",
+          "meaning": "The judgment-hour message from God's heavenly court and throne.",
+          "references": [
+            "Psalm 48:1-2",
+            "Daniel 7:9-10",
+            "Revelation 14:6-7"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "tidings out of the east and out of the north",
+          "explanation": "Tidings from the east and from the north trouble the king, and he goes out with great fury to destroy many.",
+          "scriptureReferences": [
+            "Daniel 11:44",
+            "Psalm 48:1-2",
+            "Daniel 7:9-10",
+            "Revelation 7:2-3"
+          ]
+        },
+        {
+          "term": "utterly to make away many",
+          "explanation": "Just when the northern power appears successful, a message from God's direction interrupts it.",
+          "scriptureReferences": [
+            "Daniel 11:44",
+            "Psalm 48:1-2",
+            "Daniel 7:9-10",
+            "Revelation 7:2-3"
+          ]
+        }
+      ]
+    },
+    {
+      "verse": 45,
+      "reference": "Daniel 11:45",
+      "crossReferences": [
+        "Daniel 12:1",
+        "Revelation 13:15-17",
+        "Revelation 14:1",
+        "Revelation 17:15",
+        "Revelation 19:19-21"
+      ],
+      "crossReferenceNotes": "Daniel 11 ends at the edge of the final crisis; Daniel 12 immediately answers with Michael standing and God's people delivered.",
+      "symbols": [
+        {
+          "symbol": "Tabernacles of his palace",
+          "meaning": "A final church-state union joining religious claims with royal power.",
+          "references": [
+            "Daniel 11:45",
+            "Revelation 13:11-17"
+          ]
+        },
+        {
+          "symbol": "Sea and holy mountain",
+          "meaning": "The peoples of the world on one side and God's faithful remnant on the other.",
+          "references": [
+            "Psalm 125:1",
+            "Daniel 11:45",
+            "Revelation 14:1",
+            "Revelation 17:15"
+          ]
+        }
+      ],
+      "wordNotes": [
+        {
+          "term": "tabernacles of his palace",
+          "explanation": "The king plants the tabernacles of his palace between the seas and the glorious holy mountain, yet he comes to his end and none helps him.",
+          "scriptureReferences": [
+            "Daniel 11:45",
+            "Daniel 12:1",
+            "Revelation 13:15-17",
+            "Revelation 14:1"
+          ]
+        },
+        {
+          "term": "glorious holy mountain",
+          "explanation": "Planted between the sea and the glorious holy mountain, the image shows the final power standing between the peoples of the world and God's faithful remnant.",
+          "scriptureReferences": [
+            "Daniel 11:45",
+            "Daniel 12:1",
+            "Revelation 13:15-17",
+            "Revelation 14:1"
+          ]
+        }
+      ]
+    }
+  ]
+}

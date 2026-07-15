@@ -21,7 +21,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-clean-46';
+    const href = '/daniel-illustrated.css?v=daniel-study-48';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -72,7 +72,124 @@
   }
 
   const MOBILE_INLINE_NOTES_QUERY = '(max-width: 1023px)';
+  const DANIEL_STUDY_REVISION = 'daniel-study-48';
+  const danielStudyBundles = new Map();
+  let danielStudySupportsReady = false;
   let inlineNoteRequestId = 0;
+
+  function studyEscape(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function currentDanielChapter() {
+    const value = Number(document.body && document.body.getAttribute('data-daniel-chapter'));
+    return value >= 1 && value <= 12 ? value : null;
+  }
+
+  function loadDanielStudyBundle(chapter) {
+    if (danielStudyBundles.has(chapter)) return danielStudyBundles.get(chapter);
+    const request = window.fetch(
+      '/assets/commentary/daniel-' + chapter + '.json?v=' + DANIEL_STUDY_REVISION,
+      { credentials: 'same-origin' }
+    ).then((response) => {
+      if (!response.ok) throw new Error('Unable to load Daniel ' + chapter + ' study supports.');
+      return response.json();
+    });
+    danielStudyBundles.set(chapter, request);
+    return request;
+  }
+
+  function wordNotesIcon() {
+    return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12h-5"></path><path d="M15 8h-5"></path><path d="M19 17V5a2 2 0 0 0-2-2H4"></path><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"></path></svg>';
+  }
+
+  function wordNoteReferences(references) {
+    if (!Array.isArray(references) || !references.length) return '';
+    return '<div class="daniel-word-note-references">' + references.map((reference) => (
+      '<span>' + studyEscape(reference) + '</span>'
+    )).join('') + '</div>';
+  }
+
+  function wordNotesMarkup(note) {
+    const notes = Array.isArray(note && note.wordNotes) ? note.wordNotes : [];
+    if (!notes.length) return '';
+    return '<section class="daniel-word-notes" data-daniel-word-notes>' +
+      '<div class="daniel-word-notes-title">' + wordNotesIcon() + '<span>Word / Phrase Notes</span></div>' +
+      '<div class="daniel-word-notes-list">' + notes.map((item) => (
+        '<article class="daniel-word-note">' +
+          '<h3>' + studyEscape(item.term) + '</h3>' +
+          '<p>' + studyEscape(item.explanation) + '</p>' +
+          wordNoteReferences(item.scriptureReferences) +
+        '</article>'
+      )).join('') + '</div>' +
+    '</section>';
+  }
+
+  function ensureWordPhraseNotesForNode(noteNode) {
+    if (!danielStudySupportsReady) return Promise.resolve(false);
+    if (!noteNode || noteNode.hasAttribute('data-daniel-inline-note')) return Promise.resolve(false);
+    if (noteNode.querySelector('[data-daniel-word-notes]')) return Promise.resolve(true);
+
+    const chapter = currentDanielChapter();
+    const match = noteNode.id && noteNode.id.match(/^note-(\d+)$/);
+    if (!chapter || !match) return Promise.resolve(false);
+    const verse = Number(match[1]);
+
+    return loadDanielStudyBundle(chapter).then((bundle) => {
+      const currentNode = document.getElementById('note-' + verse);
+      if (!currentNode || currentNode.querySelector('[data-daniel-word-notes]')) return Boolean(currentNode);
+      const note = Array.isArray(bundle.notes) ? bundle.notes.find((item) => Number(item.verse) === verse) : null;
+      const markup = wordNotesMarkup(note);
+      if (!markup) return false;
+      currentNode.insertAdjacentHTML('beforeend', markup);
+      return true;
+    }).catch(() => false);
+  }
+
+  function ensureActiveWordPhraseNotes() {
+    document.querySelectorAll('aside[data-commentary-panel] [id^="note-"]').forEach((note) => {
+      ensureWordPhraseNotesForNode(note);
+    });
+  }
+
+  function installWordPhraseNotes() {
+    if (!danielStudySupportsReady) return;
+    ensureActiveWordPhraseNotes();
+    if (window.__danielWordPhraseNotes) return;
+    window.__danielWordPhraseNotes = true;
+    let queued = false;
+    const queue = () => {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(() => {
+        queued = false;
+        ensureActiveWordPhraseNotes();
+      });
+    };
+    new MutationObserver(queue).observe(document.body, { childList: true, subtree: true });
+  }
+
+  function activateDanielStudySupports() {
+    if (danielStudySupportsReady) return;
+    danielStudySupportsReady = true;
+    installWordPhraseNotes();
+
+    if (!isInlineNotesViewport()) return;
+    const match = (window.location.hash || '').match(/^#v-?(\d+)$/);
+    const verseButton = match && document.getElementById('v-' + Number(match[1]));
+    if (verseButton) queueInlineStudyNote(verseButton);
+  }
+
+  function scheduleDanielStudySupports() {
+    const schedule = () => window.setTimeout(activateDanielStudySupports, 800);
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule, { once: true });
+  }
 
   function isInlineNotesViewport() {
     return window.matchMedia && window.matchMedia(MOBILE_INLINE_NOTES_QUERY).matches;
@@ -118,6 +235,10 @@
 
     const sourceNote = document.getElementById('note-' + verseNumber);
     if (!sourceNote) return false;
+    if (!sourceNote.querySelector('[data-daniel-word-notes]')) {
+      ensureWordPhraseNotesForNode(sourceNote);
+      return false;
+    }
 
     const verseBlock = verseButton.closest('div');
     if (!verseBlock) return false;
@@ -1045,7 +1166,7 @@
 
     referenceAddRecent(currentChapter, currentVerse);
     if ((window.location.hash || '').match(/^#v-?\d+$/)) {
-      window.setTimeout(() => referenceSelect(currentChapter, referenceSelectedVerse(currentChapter)), 120);
+      window.setTimeout(() => referenceSelect(currentChapter, referenceSelectedVerse(currentChapter)), 900);
     }
   }
   // MBE reference navigator end
@@ -1114,6 +1235,7 @@
     ensureShell();
   }
   installRouteWatcher();
+  scheduleDanielStudySupports();
   window.addEventListener('load', () => {
     ensureShell();
     window.setTimeout(ensureShell, 300);
