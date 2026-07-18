@@ -131,7 +131,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "5d5f4cd14ffc80bb3fda0ce0a60d794fea085f53348e927e0497ce50076063e4"
+      "approvedPublicProseSha256": "20a8283dda1c33c59b84cb7823b823150d7af7c80e23e20545f0bf6dbe25380b"
     },
     {
       "id": "chapter:2",
@@ -158,7 +158,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "7144f5480380102c51c076561acabd9d77a503cd3d79672a0a9b0252268eada1"
+      "approvedPublicProseSha256": "c0a086aab925ee91661489d5008f37b3022d0c3e0d22547cce48684795bce94b"
     },
     {
       "id": "chapter:3",
@@ -185,7 +185,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "3071e4e20c75fe9cfc0dc95f770e9185889b03052fc9992e227c1b1702d8bd0a"
+      "approvedPublicProseSha256": "0fbc86b186de36e67088eb265a6717c3f18b7756d7ded5ece45abd5253662e88"
     },
     {
       "id": "chapter:4",
@@ -212,7 +212,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "bab6604083d4a65a31df7e775035a54eb3f8dc739d3d19ad2881e91d74084195"
+      "approvedPublicProseSha256": "e06bc77de57ea3bd98afbe04543efed9cfeb05ddf18f68bddfbaa647286c3a90"
     },
     {
       "id": "chapter:5",
@@ -239,7 +239,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "18cf6eb30f253bcaf7364bcc0571547e39c213fee293c31abb20a478aad8d51d"
+      "approvedPublicProseSha256": "f23785cebc78325d84485aa18061432bc7691c2342dfba9575c32b54a9226cf0"
     },
     {
       "id": "chapter:6",
@@ -266,7 +266,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "1d9b2b42b97508e4a2f9c53e70bd2b9adb3a60c45230964d6d2a03231ba87073"
+      "approvedPublicProseSha256": "7ff88a78f8c691ca82fa6a61e4b6165536885060dbb7b662537dc0e51dbb3a80"
     },
     {
       "id": "chapter:7",
@@ -293,7 +293,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "7d0903c6a8bcc7a2c4486b827bf92c7e94264dbba29bd6da302ed91e434039ad"
+      "approvedPublicProseSha256": "33c487b97277e3764e927ebe8ee4e6a54f0edd332d75b0d685fd2e7097daf925"
     },
     {
       "id": "chapter:8",
@@ -320,7 +320,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "67cd6f5f29a241936395f9bbf67fd7fbd52c4f2881b86a0b2900714f66697c51"
+      "approvedPublicProseSha256": "bc32e6ed045e6c7d8badc85494b829b4e711bdd3a487cc39e336acae5a8474ca"
     },
     {
       "id": "chapter:9",
@@ -347,7 +347,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "f331ade06f3c032a87b505184cf366d3c904e569112bdb646a8a016b47555dbc"
+      "approvedPublicProseSha256": "e98c00059c742a0ab9037a7f36eeeaf79cefb7318deb842941cee870391d1f55"
     },
     {
       "id": "chapter:10",
@@ -374,7 +374,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "1c9233cb77654c14a4322b33e86717760d7b5f4061fc16d110b7d252e6a8e037"
+      "approvedPublicProseSha256": "0e15c1de826e7b3d7a5e91c3dd2f372559dbc1f8ec99253fede0028dce9d8f24"
     },
     {
       "id": "chapter:11",
@@ -401,7 +401,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "d78a673cb674c777911a80e46994a15b446fe41e938f5ef9945d8c3a2d28017f"
+      "approvedPublicProseSha256": "7c98239a09e1eefd5ce77822572cef3458ee1492895960c611b0f8c758d4546b"
     },
     {
       "id": "chapter:12",
@@ -428,7 +428,7 @@
         "themes",
         "title"
       ],
-      "approvedPublicProseSha256": "9c391d12c3bff15eb047063946b3a5141ae0a94ec8a9cc2cd38d1f5019a6143e"
+      "approvedPublicProseSha256": "7aab82d1ceb1a3197a2c01c503b040f669ed5ff70ed2744fb2f10184f81f843d"
     },
     {
       "id": "route:article:antiochus-iv-and-daniel-8",
@@ -958,7 +958,7 @@
       "reviewedFields": [
         "visibleText"
       ],
-      "approvedPublicProseSha256": "b9072bbbbf4442bf9c1e59712b2fb210eeb7cabe2bc563394cb1b79db565cbb1"
+      "approvedPublicProseSha256": "031be86d6cb5e691ef4f0567596fb1478cb9bac8ad01c5d1146c95a549ab7319"
     },
     {
       "id": "route:chart:daniel-8",
@@ -1037,7 +1037,7 @@
       "reviewedFields": [
         "visibleText"
       ],
-      "approvedPublicProseSha256": "a27d120f7bd63847418f7824dcda511476f5887a382eb1802b97d348f20e759d"
+      "approvedPublicProseSha256": "d2e4cce16c199ceccc711e9500812347b9679def545b5db7d1e891ffb134fa29"
     },
     {
       "id": "route:home",
@@ -1052,7 +1052,7 @@
       "reviewedFields": [
         "visibleText"
       ],
-      "approvedPublicProseSha256": "474cd38b888d0e72652a17365d9c803dceeb1b4aaf9bcb8f9a5599afe913d3ba"
+      "approvedPublicProseSha256": "adf6feab3ee73471eb5bfcb8306e4f648e91ae36fcddd6bc4bfccbe0883a82e1"
     },
     {
       "id": "route:schools",
@@ -1749,7 +1749,7 @@
         "verse",
         "wordNotes"
       ],
-      "approvedPublicProseSha256": "eec3009cfee6476b5583c32becc50d6c203b80a7602daf4c34237467aae5d7ad"
+      "approvedPublicProseSha256": "4317e2aefda10fe51991b42a284a7160dfdb1cb0aba38b22dfcd2d08088747fa"
     },
     {
       "id": "verse:2:2",
@@ -8569,7 +8569,7 @@
         "verse",
         "wordNotes"
       ],
-      "approvedPublicProseSha256": "b4acfeb9fe96f593719ab7793a73f966254a6f57a9044ecffb95c6b44437dd08"
+      "approvedPublicProseSha256": "62da359f14afc1a2b783213918c61f6034fd17fb571e69e0222d2e1818fc7a65"
     },
     {
       "id": "verse:8:19",
