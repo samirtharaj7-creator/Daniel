@@ -1,4 +1,4 @@
-import { readdir, readFile, unlink, writeFile } from "node:fs/promises";
+import { readdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,7 +12,11 @@ const condensedChapterChunk = "page-84dab90387636c10.js";
 const signaledChapterChunk = "page-e3a933f4aa672385.js";
 const newChapterChunk = "page-c779a684851022a2.js";
 const expectedChunkSha256 = "c779a684851022a29252eb9f16664d56552243cc33da995edd8a6486fd4ddc54";
-const staleChapterChunks = [originalChapterChunk, condensedChapterChunk, signaledChapterChunk];
+const compatibilityChapterChunks = [
+  { filename: originalChapterChunk, sha256: "45e90b16e1995377b07919df8d34ebff8aa4177c36d9ca811d21f4063a4f1ef5" },
+  { filename: condensedChapterChunk, sha256: "84dab90387636c10b6c0cbd479374abb456c95b97943e2ab40c6b23227252acb" },
+  { filename: signaledChapterChunk, sha256: "e3a933f4aa6723853ee7bd36ba9578de6b5fd98666d16efa9f4412235700a296" },
+];
 const immediateYearScript = "<script>document.querySelectorAll('[data-mbe-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });</script>";
 
 async function listFiles(directory) {
@@ -55,9 +59,9 @@ if (versionedFiles !== 55) {
 
 const chunkDirectory = join(root, "_next/static/chunks/app/chapters/[chapter]");
 const newChunkPath = join(chunkDirectory, newChapterChunk);
-const staleChunkPaths = staleChapterChunks.map((filename) => join(chunkDirectory, filename));
+const compatibilityChunkPaths = compatibilityChapterChunks.map(({ filename }) => join(chunkDirectory, filename));
 let chapterChunk = null;
-for (const candidate of [newChunkPath, ...staleChunkPaths]) {
+for (const candidate of [newChunkPath, ...compatibilityChunkPaths]) {
   try {
     chapterChunk = await readFile(candidate, "utf8");
     break;
@@ -108,21 +112,16 @@ if ((chapterChunk.match(/daniel:hydrated/g) ?? []).length !== 1) {
 
 if (!checkOnly) {
   await writeFile(newChunkPath, chapterChunk);
-  for (const stalePath of staleChunkPaths) {
-    try { await unlink(stalePath); } catch (error) {
-      if (error.code !== "ENOENT") throw error;
-    }
-  }
 }
 
 let chapterReferenceFiles = 0;
 for (const file of await listRouteArtifacts(root)) {
   let source = await readFile(file, "utf8");
   const before = source;
-  for (const staleChunk of staleChapterChunks) {
-    if (!source.includes(staleChunk)) continue;
-    if (checkOnly) throw new Error(`${relative(root, file)} still references ${staleChunk}`);
-    source = source.replaceAll(staleChunk, newChapterChunk);
+  for (const { filename: compatibilityChunk } of compatibilityChapterChunks) {
+    if (!source.includes(compatibilityChunk)) continue;
+    if (checkOnly) throw new Error(`${relative(root, file)} still references compatibility chunk ${compatibilityChunk}`);
+    source = source.replaceAll(compatibilityChunk, newChapterChunk);
   }
   if (!checkOnly && source !== before) await writeFile(file, source);
   if (source.includes(newChapterChunk)) chapterReferenceFiles += 1;
@@ -139,13 +138,20 @@ if (chunkSha256 !== expectedChunkSha256) {
 for (const marker of [ssrCompatibleBranchMarker, condensedRenderer, richRenderer]) {
   if (!chapterChunk.includes(marker)) throw new Error("Daniel chapter chunk is missing an SSR-compatible symbol renderer");
 }
-for (let index = 0; index < staleChunkPaths.length; index += 1) {
+let compatibilityChunkCount = 0;
+for (let index = 0; index < compatibilityChunkPaths.length; index += 1) {
+  const definition = compatibilityChapterChunks[index];
+  let bytes;
   try {
-    await readFile(staleChunkPaths[index]);
-    throw new Error(`Stale Daniel chapter chunk remains: ${staleChapterChunks[index]}`);
-  } catch (error) {
-    if (error.code !== "ENOENT") throw error;
+    bytes = await readFile(compatibilityChunkPaths[index]);
+  } catch {
+    throw new Error(`Missing immutable Daniel compatibility chunk: ${definition.filename}`);
   }
+  const digest = createHash("sha256").update(bytes).digest("hex");
+  if (digest !== definition.sha256) {
+    throw new Error(`Daniel compatibility chunk ${definition.filename} drifted: ${digest}`);
+  }
+  compatibilityChunkCount += 1;
 }
 
 let safeChapterPages = 0;
@@ -207,4 +213,4 @@ if (/schedulePageEnhancements[\s\S]{0,240}\}, (?:120|500)\);/.test(unified)) {
   throw new Error("Daniel initial page enhancements still rely on a hydration timing guess");
 }
 
-console.log(`${checkOnly ? "Validated" : "Synchronized"} Daniel hydration signaling, ${safeChapterPages} safe chapter pages, ${symbolShapeCounts.rich}/${symbolShapeCounts.condensed}/${symbolShapeCounts.deferred} rich/condensed/deferred SSR symbol shapes, ${versionedFiles} cache-versioned artifacts, and ${chapterReferenceFiles} cache-safe chapter payloads.`);
+console.log(`${checkOnly ? "Validated" : "Synchronized"} Daniel hydration signaling, ${safeChapterPages} safe chapter pages, ${symbolShapeCounts.rich}/${symbolShapeCounts.condensed}/${symbolShapeCounts.deferred} rich/condensed/deferred SSR symbol shapes, ${versionedFiles} cache-versioned artifacts, ${chapterReferenceFiles} current chapter payloads, and ${compatibilityChunkCount} immutable compatibility chunks.`);
