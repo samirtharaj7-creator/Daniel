@@ -21,7 +21,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-study-54';
+    const href = '/daniel-illustrated.css?v=daniel-study-55';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -72,7 +72,7 @@
   }
 
   const MOBILE_INLINE_NOTES_QUERY = '(max-width: 1023px)';
-  const DANIEL_STUDY_REVISION = 'daniel-study-54';
+  const DANIEL_STUDY_REVISION = 'daniel-study-55';
   const danielStudyBundles = new Map();
   let danielStudySupportsReady = false;
   let danielInlineNotesReady = false;
@@ -1292,7 +1292,7 @@
     ensureShell();
     danielInlineNotesReady = true;
     flushPendingInlineStudyNote();
-  }, 120);
+  }, 500);
 
   ensureDarkTheme();
   installInlineStudyNotes();
@@ -1301,7 +1301,7 @@
   installRouteWatcher();
   scheduleDanielStudySupports();
   window.addEventListener('load', () => {
-    window.setTimeout(ensureShell, 300);
+    window.setTimeout(ensureShell, 500);
     window.setTimeout(ensureShell, 1000);
   });
 
