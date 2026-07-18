@@ -9,6 +9,19 @@
     });
   }
 
+  function isDanielChapterRoute() {
+    const path = (window.location.pathname || '/').replace(/\/index\.html$/, '/');
+    return /^\/chapters\/(?:[1-9]|1[0-2])\/?$/.test(path);
+  }
+
+  function whenDanielHydrationReady(callback) {
+    if (!isDanielChapterRoute() || document.documentElement.dataset.danielHydrated === 'true') {
+      callback();
+      return;
+    }
+    window.addEventListener('daniel:hydrated', callback, { once: true });
+  }
+
   function ensureDarkTheme() {
     document.documentElement.classList.add('dark');
     try {
@@ -21,7 +34,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-study-55';
+    const href = '/daniel-illustrated.css?v=daniel-study-56';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -72,7 +85,7 @@
   }
 
   const MOBILE_INLINE_NOTES_QUERY = '(max-width: 1023px)';
-  const DANIEL_STUDY_REVISION = 'daniel-study-55';
+  const DANIEL_STUDY_REVISION = 'daniel-study-56';
   const danielStudyBundles = new Map();
   let danielStudySupportsReady = false;
   let danielInlineNotesReady = false;
@@ -186,7 +199,10 @@
   }
 
   function scheduleDanielStudySupports() {
-    const schedule = () => window.setTimeout(activateDanielStudySupports, 800);
+    const schedule = () => {
+      const delay = isDanielChapterRoute() ? 0 : 800;
+      whenDanielHydrationReady(() => window.setTimeout(activateDanielStudySupports, delay));
+    };
     if (document.readyState === 'complete') schedule();
     else window.addEventListener('load', schedule, { once: true });
   }
@@ -1288,11 +1304,14 @@
     window.addEventListener('popstate', queueRefresh);
   }
 
-  const schedulePageEnhancements = () => window.setTimeout(() => {
-    ensureShell();
-    danielInlineNotesReady = true;
-    flushPendingInlineStudyNote();
-  }, 500);
+  function schedulePageEnhancements() {
+    const delay = isDanielChapterRoute() ? 0 : 500;
+    whenDanielHydrationReady(() => window.setTimeout(() => {
+      ensureShell();
+      danielInlineNotesReady = true;
+      flushPendingInlineStudyNote();
+    }, delay));
+  }
 
   ensureDarkTheme();
   installInlineStudyNotes();
@@ -1300,21 +1319,19 @@
   else window.addEventListener('load', schedulePageEnhancements, { once: true });
   installRouteWatcher();
   scheduleDanielStudySupports();
-  window.addEventListener('load', () => {
-    window.setTimeout(ensureShell, 500);
-    window.setTimeout(ensureShell, 1000);
-  });
 
-  // Keep the emblem swapped through React hydration, then watch the header so
-  // it also survives later client-side re-renders.
-  let logoTicks = 0;
-  const logoTimer = window.setInterval(() => {
-    ensureLogo();
-    if (++logoTicks >= 10) {
-      window.clearInterval(logoTimer);
-      const wm = document.querySelector('.tracking-\\[0\\.3em\\]');
-      const header = wm && wm.closest('header');
-      if (header) new MutationObserver(ensureLogo).observe(header, { childList: true, subtree: true });
-    }
-  }, 500);
+  // Begin header customization only after React owns its initial DOM.
+  function startLogoGuard() {
+    let logoTicks = 0;
+    const logoTimer = window.setInterval(() => {
+      ensureLogo();
+      if (++logoTicks >= 10) {
+        window.clearInterval(logoTimer);
+        const wm = document.querySelector('.tracking-\\[0\\.3em\\]');
+        const header = wm && wm.closest('header');
+        if (header) new MutationObserver(ensureLogo).observe(header, { childList: true, subtree: true });
+      }
+    }, 500);
+  }
+  whenDanielHydrationReady(startLogoGuard);
 })();
