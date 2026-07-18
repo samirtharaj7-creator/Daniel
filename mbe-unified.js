@@ -34,7 +34,7 @@
 
   function ensureIllustratedAssets() {
     if (!document.head) return;
-    const href = '/daniel-illustrated.css?v=daniel-study-56';
+    const href = '/daniel-illustrated.css?v=daniel-study-57';
     const existing = document.querySelector('link[data-dvx="css"]');
     if (existing) {
       const expected = new URL(href, window.location.origin).href;
@@ -85,7 +85,7 @@
   }
 
   const MOBILE_INLINE_NOTES_QUERY = '(max-width: 1023px)';
-  const DANIEL_STUDY_REVISION = 'daniel-study-56';
+  const DANIEL_STUDY_REVISION = 'daniel-study-57';
   const danielStudyBundles = new Map();
   let danielStudySupportsReady = false;
   let danielInlineNotesReady = false;
