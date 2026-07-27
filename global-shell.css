@@ -391,6 +391,23 @@ body{
   overscroll-behavior-y:none;
 }
 
+body.mbe-shell-managed {
+  --mbe-reader-bottom-cushion: 3rem;
+  --mbe-reader-footer-cushion: calc(var(--mbe-reader-footer-height, 6.5rem) + 2.5rem);
+}
+
+body.mbe-shell-managed.mbe-reader-footer-visible {
+  --mbe-reader-bottom-cushion: var(--mbe-reader-footer-cushion);
+}
+
+body.mbe-shell-managed > main.reader-page:has(> .split-reader) .scripture-list::after,
+body.mbe-shell-managed > main.reader-page:has(> .split-reader) .commentary-shell::after {
+  display: block !important;
+  height: var(--mbe-reader-bottom-cushion, 3rem) !important;
+  content: "" !important;
+}
+
+
 @media(min-width:981px){
   body.mbe-shell-managed > main:has(:is(.split-reader,.reader-shell)),
   body:has(> .mbe-global-footer) > main:has(:is(.split-reader,.reader-shell)),
@@ -458,6 +475,7 @@ body{
     main[data-bible-panel],
     aside[data-commentary-panel] .workspace-scroll
   ){
-    padding-bottom:calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom:calc(var(--mbe-reader-bottom-cushion, 3rem) + env(safe-area-inset-bottom, 0px)) !important;
+    scroll-padding-bottom:calc(var(--mbe-reader-bottom-cushion, 3rem) + env(safe-area-inset-bottom, 0px)) !important;
   }
 }
