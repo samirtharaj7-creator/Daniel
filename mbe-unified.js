@@ -1335,3 +1335,12 @@
   }
   whenDanielHydrationReady(startLogoGuard);
 })();
+
+/* Shared Library menu: every study site shows the same list, kept in one file on mybibleexplorer.com. */
+(function () {
+  if (document.querySelector('script[src^="https://mybibleexplorer.com/library.js"]')) return;
+  var s = document.createElement("script");
+  s.src = "https://mybibleexplorer.com/library.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();
